@@ -17,7 +17,7 @@
 // use this for Vanila Javascript.
 'use strict';
 
-// 2. Variable
+// 2. Variable, rw(read/write)
 // let (added in ES6)
 
 let globalName = 'global Name';
@@ -43,9 +43,12 @@ console.log(globalName);
 console.log(age);
 
 
-// 3. Constants
+// 3. Constant, r(read only)
 // example) const maxNumber = 5;
-// favor immutable data type always for a few reasons:
+
+// Note! (imm은 데이터 자체를 절대 변경할 수 없다 / 기본적으로 모든 오브젝은 mutable로 변경이 가능하다.)
+// Immutable data types : primitive types, frozen objects (i.e. object.freeze())
+// Mutable data types : all objects by default are mutable in JS
 // 웬만하면 값을 할당한 다음 다시는 변경되지 않는 데이터 타입을 사용하라 :
 // - security               보안상의 이유
 // - thread safety          값이 변하지 않아야 다중 스레드 환경에서 안전
@@ -148,3 +151,8 @@ console.log(`value: ${text}, type: ${typeof text}`); // string -> number(4)
 // 변수의 타입이 지 꼴리는 대로 자동변환돼서 뒷통수를 맞는다.
 // 이러한 문제점때문에 TypeScript가 나오게 된다.
 // JS위에 Type이 올려져 있는 것이 TypeScript이다. JS를 충분히 이해하고 TS로 넘어가자.
+
+
+
+// primitive type은 value 자체가 메모리에 저장된다.
+// object type은 커서 메모리에 바로 저장될 수 없다. (reference (포인터))
