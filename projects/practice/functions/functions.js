@@ -16,7 +16,7 @@
 // function is object in JS
 
 "use strict";
-function printHello(){
+function printHello(){[]
     console.log('Hello');
 }
 printHello();
