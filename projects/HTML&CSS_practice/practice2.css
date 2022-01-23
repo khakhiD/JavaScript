@@ -1,0 +1,45 @@
+/* selector{
+  property: value;
+} */
+
+/*
+    https://flukeout.github.io/
+    에서 게임을 통해 CSS를 연습해보세요.
+*/
+* {
+    color:green;
+  }
+  
+  li {
+    color:blue;
+  }
+  
+  li#special {
+    color:pink;
+  }
+  
+  /* 
+    padding : 컨텐츠 안의 공간
+    margin : 컨텐츠 바깥의 공간
+  */
+  .red {
+    width: 100px;
+    height: 100px;
+    padding 20px 0px;
+    margin: 20px;
+    border-width:2px;
+    border-style:solid;
+    border-color:pink;
+    border:2px dashed red;
+    background: yellow;
+  }
+  
+  button:hover{
+    color: red;
+    background: beige;
+  }
+  
+  a[href^=""]{
+    color:purple;
+  }
+  
