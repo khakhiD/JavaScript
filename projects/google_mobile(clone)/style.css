@@ -1,0 +1,35 @@
+body{margin:0px; padding:0px;}
+a{text-decoration: none; color: black;}
+p{margin:0;}
+
+header{display:flex;justify-content: space-between; padding:14px;}
+header .header-left{display:flex;}
+header .header-left > span{margin-right:18px;}
+header .header-left > span > i{color:rgb(75, 75, 75)}
+header .header-left > a{display:block; font-size: 13px; padding:0 7px; text-align: center; height: 28px; color:rgb(107, 105, 105);}
+header .header-left > a.active{border-bottom: 2px solid #4284F3; color:#4284F3; font-weight: bold;}
+header .header-right{display:flex;}
+header .header-right > span > i{color:rgb(107, 105, 105);}
+header .header-right > div{width:80px; height: 32px; background-color: #4284F3;
+    border-radius:4px; font-size:13px; line-height: 32px; text-align: center;
+    color:#fff; position:relative; top:-7px; margin-left: 10px;}
+section{padding:0px;}
+section .logo{text-align: center; margin-top: 30px; font-size: 30px;}
+section .logo > span{margin:0 -4px; font-weight: bold; font-size: 42px;}
+section .logo > span:nth-of-type(1){color:#4284F3; font-size: 52px;}
+section .logo > span:nth-of-type(2){color:#EA4335;}
+section .logo > span:nth-of-type(3){color:#FABC05;}
+section .logo > span:nth-of-type(4){color:#4284F3;}
+section .logo > span:nth-of-type(5){color:#44A852;}
+section .logo > span:nth-of-type(6){color:#EA4335;}
+section .main_search{width:100%; margin-top: 26px; height: 36px; border-radius: 22px; border: 1px solid rgb(211, 211, 211); outline: none; box-sizing:border-box; padding-left:36px;}
+section > i{position:relative; top:-28px; left:12px; color:rgb(158, 158, 158);}
+
+footer{background-color: #F2F2F2; position:absolute; bottom: 0; width:100%;}
+footer > p:nth-of-type(1){padding: 8px 12px; font-size: 16px; color:#797979;}
+footer > p:nth-of-type(2){border-top: 1px solid #d9dce0; border-bottom: 1px solid #d9dce0; text-align: center; padding:16px; font-size: 13px;}
+footer > p:nth-of-type(2) > span{display: inline-block; width:10px; height:10px; border-radius:50%; background-color: rgb(105, 105, 105); position:relative; margin-right:4px;}
+footer .etc{text-align: center; padding:16px;}
+footer .etc > div{padding:4px;}
+footer .etc > div > span{font-size: 13px; color:#777777;}
+footer .etc > div > span:nth-of-type(2){margin:0 20px;}
