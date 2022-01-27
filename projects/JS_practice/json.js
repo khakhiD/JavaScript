@@ -108,20 +108,20 @@ console.clear();
 console.log(rabbit.birthDate.getDate());
 console.log(revivertest2.birthDate.getDate()); // reviver를 통해서 함수를 사용 가능!
 
-//                                                  유용한 sites
-// 1. JSON Diff : https://jsondiff.com
-// 서버에게 요청했을 때, 첫번 째로 받아온 데이터와 두번째로 ㅂ다아온 데이터가 어떻게 다른지 모를 때,
-// 비교할 수 있게 해주는 사이트.
+/*--------------------------------JSON 관련 유용한 sites----------------------------------
+    1. JSON Diff : https://jsondiff.com
+    서버에게 데이터를 요청했을때 첫번째로 받아온 데이터와 두번째로 받아온 데이터가
+    어떻게 다른지 모를 때, 비교할 수 있게 해주는 사이트.
 
-// 2. JSON Beautifier
-// 가끔 서버에서 받아온 JSON을 복붙하면 포맷이 망가지는 경우가 있다.
-// 간단하게 웹사이트에서 Beautify하면 포맷이 예뻐진다.
+    2. JSON Beautifier
+    가끔 서버에서 받아온 JSON을 복붙하면 포맷이 망가지는 경우가 있다.
+    간단하게 웹사이트에서 Beautify하면 포맷이 예뻐진다.
 
-// 3. JSON Parser
-// JSON Type을 오브젝트 형태로, 눈으로 확인해보고 싶다면 사용
+    3. JSON Parser
+    JSON Type을 오브젝트 형태로, 눈으로 확인해보고 싶다면 사용
 
-// 4. JSON Validator
-// JSON을 붙여넣어 Validate해보면 JSON 오류를 찾아준다.
+    4. JSON Validator
+    JSON을 붙여넣어 Validate해보면 JSON 오류를 찾아준다.
 
-// 실제로 현업에서 프로젝트를 운용할 때, JSON Data가 클 경우가 있다.
-// 이것을 minify하거나 compress할 때 여러 트릭들이 있다. 다음에 한 번 알아보자.
+    실제로 현업에서 프로젝트를 운용할 때, JSON Data가 클 경우가 있다.
+    이것을 minify하거나 compress할 때 여러 트릭들이 있다. 다음에 한 번 알아보자.        */

@@ -1,0 +1,145 @@
+<!-- DreamCoding Ellie : Youtube Clone Coding
+        Trend => Mobile First! 모바일 화면부터 개발한 뒤, 확장하여 개발한다.
+        HINT*
+            1. 레이아웃 구조 파악하기
+                너무 많은 break point를 만드는 것보다 최대한 컨텐츠가 유동적으로 늘어지게 만들다가,
+                공간활용이 너무 비효율적일때만 끊어서 레이아웃을 재배치하는 것이 좋다.
+                너무 많은 media query별로 재배치하면, 사용자에게도 좋지 않고 개발자에게도 좋지 않다.
+            
+                유튜브 모바일 페이지는 총 네가지 레이아웃으로 나눌 수 있을 것 같다.
+                1. 헤더
+                2. 영상플레이어
+                3. 영상 정보
+                    3.1. 영상 메타데이터 박스 (제목 등)
+                        3.1.1. 해시태그
+                        3.1.2. 타이틀박스 + 버튼
+                        3.1.3. 정보 (조회수 등)
+                    3.2. 액션 버튼
+                        3.2.1. 라이크 버튼
+                        3.2.2. 디스라이크 버튼
+                        3.2.3. 쉐어 버튼
+                        3.2.4. 추가 버튼
+                        3.2.5. 리포트 버튼
+                    3.3. 채널 버튼
+                        3.3.1. 채널 로고
+                        3.3.2. 채널 타이틀
+                        3.3.3. 구독 버튼
+                4. 다음 영상 목록
+-->
+<!-- Mark-UP 과정들...
+    Wire Framing: 디자이너가 개발 전, 전체 페이지의 프레임 구조를 러프하게 구성하는 것
+    Labeling: 각 박스 및 프레임에 이름을 붙이는 것
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Mobile (Clone Coding) - KahkiD 22.01.27</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS Link-->
+    <!-- fontawsome Link -->
+    <script src="https://kit.fontawesome.com/1e40242dee.js" crossorigin="anonymous"> </script>
+    <script src="main.js" defer></script>     <!-- JS link -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fab fa-youtube"></i>
+            <span class="title">Youtube</span>
+        </div>
+        <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </header>
+
+    <!-- Video Player -->
+    <section class="player">
+        <video controls src="video/sample_video_01.mov"></video>
+    </section>
+
+    <!-- Video Info -->
+    <section class="info">
+        <!-- Metadata -->
+        <div class="metadata">
+            <ul class="hashtags">
+                <li>#DreamCoding</li>
+                <li>#DreamCoders</li>
+                <li>#KhakhiD</li>
+            </ul>
+            <div class="titleAndButton">
+                <span class="title">
+                    >Clone Coding: Youtube Mobile Website 유튜브 모바일 웹사이트
+                    따라 만들기 | 프론트엔드 개발자 입문편: HTML, CSS, JS 드림코딩과
+                    함께하는 프론트엔드 실전 입문편
+                </span>
+                <button class="moreBtn">
+                    <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <span class="views">1M views 1 month ago</span>
+        </div>
+        <!-- Action Buttons -->
+        <div class="actions">
+            <li><button><i class="fas fa-thumbs-up"></i><span>1K</span></button></li>
+            <li><button><i class="fas fa-thumbs-down"></i><span>0</span></button></li>
+            <li><button><i class="fas fa-share"></i><span>Share</span></button></li>
+            <li><button><i class="fas fa-plus"></i><span>Save</span></button></li>
+            <li><button><i class="fas fa-font-awesome-flag"></i><span>Report</span></button></li>
+        </div>
+        <!-- Channel Description -->
+        <div class="channel">
+            <div class="metadata">
+                <img src="image/images.png" alt=""/>
+                <div class="info">
+                    <div class="name">드림코딩 by 엘리</div>
+                    <div class="subscribers">1M Subscribers</div>
+                </div>
+            </div>
+            <div class="subscribe">
+                <button class="subscrib">subscribe</button>
+            </div>
+        </div>
+    </section>
+    <section class="UpNext">
+        <span class="title">Up next</span>
+        <ul>
+            <li class="item">
+                <img src="image/thumbnail1.jpg" alt="">
+                <div class="info">
+                    <span class="title">How to Make Youtube Dummy Thumbnail!</span>
+                    <span class="name">ChannelNAME</span>
+                    <span class="views">82K views</span>
+                </div>
+                <button class="moreBtn">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </li>
+            <li class="item">
+                <img src="image/thumbnail1.jpg" alt="">
+                <div class="info">
+                    <span class="title">How to Make Youtube Dummy Thumbnail!</span>
+                    <span class="name">ChannelNAME</span>
+                    <span class="views">82K views</span>
+                </div>
+                <button class="moreBtn">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </li>
+            <li class="item">
+                <img src="image/thumbnail1.jpg" alt="">
+                <div class="info">
+                    <span class="title">How to Make Youtube Dummy Thumbnail!</span>
+                    <span class="name">ChannelNAME</span>
+                    <span class="views">82K views</span>
+                </div>
+                <button class="moreBtn">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
