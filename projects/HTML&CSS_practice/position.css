@@ -1,0 +1,25 @@
+div{
+    width:50px;
+    height:50px;
+    margin-bottom:20px;
+    background: red;
+  }
+  
+  .container{
+    background: yellow;
+    left:20px;
+    top:20px;
+    position: relative;
+    /*
+      position: static(default),
+                absolute, relative,
+                fixed, sticky
+    */
+  }
+  
+  .box{
+    background: blue;
+    left:20px;
+    top:20px;
+    position: sticky;
+  }
