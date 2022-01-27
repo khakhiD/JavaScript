@@ -60,7 +60,10 @@
         <video controls src="video/sample_video_01.mov"></video>
     </section>
 
-    <!-- Video Info -->
+
+
+    <div class="infoAndUpNext">
+            <!-- Video Info -->
     <section class="info">
         <!-- Metadata -->
         <div class="metadata">
@@ -70,8 +73,8 @@
                 <li>#KhakhiD</li>
             </ul>
             <div class="titleAndButton">
-                <span class="title">
-                    >Clone Coding: Youtube Mobile Website 유튜브 모바일 웹사이트
+                <span class="title clamp">
+                    Clone Coding: Youtube Mobile Website 유튜브 모바일 웹사이트
                     따라 만들기 | 프론트엔드 개발자 입문편: HTML, CSS, JS 드림코딩과
                     함께하는 프론트엔드 실전 입문편
                 </span>
@@ -83,11 +86,31 @@
         </div>
         <!-- Action Buttons -->
         <div class="actions">
-            <li><button><i class="fas fa-thumbs-up"></i><span>1K</span></button></li>
-            <li><button><i class="fas fa-thumbs-down"></i><span>0</span></button></li>
-            <li><button><i class="fas fa-share"></i><span>Share</span></button></li>
-            <li><button><i class="fas fa-plus"></i><span>Save</span></button></li>
-            <li><button><i class="fas fa-font-awesome-flag"></i><span>Report</span></button></li>
+            <li>
+                <button>
+                    <i class="active fas fa-thumbs-up"></i><span>1K</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fas fa-thumbs-down"></i><span>0</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fas fa-share"></i><span>Share</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fas fa-plus"></i><span>Save</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fas fa-flag"></i><span>Report</span>
+                </button>
+            </li>
         </div>
         <!-- Channel Description -->
         <div class="channel">
@@ -98,16 +121,16 @@
                     <div class="subscribers">1M Subscribers</div>
                 </div>
             </div>
-            <div class="subscribe">
-                <button class="subscrib">subscribe</button>
-            </div>
+            <button class="subscribe">subscribe</button>
         </div>
     </section>
-    <section class="UpNext">
+
+    <!-- Up Next -->
+    <section class="upNext">
         <span class="title">Up next</span>
         <ul>
             <li class="item">
-                <img src="image/thumbnail1.jpg" alt="">
+                <div class="img"><img src="image/thumbnail1.jpg" alt=""></div>
                 <div class="info">
                     <span class="title">How to Make Youtube Dummy Thumbnail!</span>
                     <span class="name">ChannelNAME</span>
@@ -118,7 +141,7 @@
                 </button>
             </li>
             <li class="item">
-                <img src="image/thumbnail1.jpg" alt="">
+                <div class="img"><img src="image/thumbnail1.jpg" alt=""></div>
                 <div class="info">
                     <span class="title">How to Make Youtube Dummy Thumbnail!</span>
                     <span class="name">ChannelNAME</span>
@@ -129,7 +152,7 @@
                 </button>
             </li>
             <li class="item">
-                <img src="image/thumbnail1.jpg" alt="">
+                <div class="img"><img src="image/thumbnail1.jpg" alt=""></div>
                 <div class="info">
                     <span class="title">How to Make Youtube Dummy Thumbnail!</span>
                     <span class="name">ChannelNAME</span>
@@ -141,5 +164,6 @@
             </li>
         </ul>
     </section>
+    </div>
 </body>
 </html>
