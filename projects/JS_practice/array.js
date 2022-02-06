@@ -8,7 +8,7 @@
 // array map set list... 학교에서 배웠지
 // ... 검색 정렬 삽입 삭제
 
-'use strict';
+"use strict";
 
 // Array🎉
 
@@ -17,7 +17,7 @@ const arr1 = new Array();
 const arr2 = [1, 2]; // 더 흔하게 쓰이는 방법
 
 // 2. 인덱스 주소 Index position
-const fruits = ['🍎', '🍌'];
+const fruits = ["🍎", "🍌"];
 console.log(fruits);
 console.log(fruits.length);
 console.log(fruits[0]);
@@ -29,19 +29,19 @@ console.clear();
 // 3. 전체 배열 반복문 출력 Looping over an array
 // print all fruits
 // a. for
-for(let i=0; i<fruits.length; i++){
-    console.log(fruits[i]);
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
 }
 // b. for of
-for(let value of fruits){
-    console.log(value);
+for (let value of fruits) {
+  console.log(value);
 }
 // c. forEach
 fruits.forEach((fruit) => console.log(fruit));
 
 // 4. 삽입, 삭제, 복사 Addition, deletion, copy
 // push: add an item to the end
-fruits.push('🥝', '🍓');
+fruits.push("🥝", "🍓");
 console.log(fruits);
 // pop: remove an item from the end
 fruits.pop();
@@ -49,7 +49,7 @@ fruits.pop();
 console.log(fruits);
 
 // unshift: add an item to the beginning 맨 앞에 추가
-fruits.unshift('🍕');
+fruits.unshift("🍕");
 console.log(fruits);
 // shift: remove an item from the beginning 맨 앞을 제거
 fruits.shift();
@@ -59,35 +59,34 @@ console.log(fruits);
 // pop & push is fastest way to addition or deletion
 
 // splice: remove an item by index position 주소로 제거
-fruits.push('🥝', '🍉', '🍒');
+fruits.push("🥝", "🍉", "🍒");
 console.log(fruits);
-fruits.splice(1,1); // 두번째 인자를 입력하지 않으면 다 지움
+fruits.splice(1, 1); // 두번째 인자를 입력하지 않으면 다 지움
 console.log(fruits);
-fruits.splice(1,1, '🍈', '🍇', '🍆'); // 지우고 추가하기!
-fruits.splice(1,0,'🍳'); // 지우지 않고 추가만 하기!
+fruits.splice(1, 1, "🍈", "🍇", "🍆"); // 지우고 추가하기!
+fruits.splice(1, 0, "🍳"); // 지우지 않고 추가만 하기!
 console.log(fruits);
 
 // 두 배열 합치기 combine two arrays
-const fruits2 = ['🥑','🥕'];
+const fruits2 = ["🥑", "🥕"];
 const newFruits = fruits.concat(fruits2); // concat 함수
 console.log(newFruits);
-
 
 // 5. 검색 Seraching
 // indexOf: find the index
 console.clear();
 console.log(fruits);
-console.log(fruits.indexOf('🍌'));  // index position
-console.log(fruits.indexOf('123')); // -1
+console.log(fruits.indexOf("🍌")); // index position
+console.log(fruits.indexOf("123")); // -1
 // includes: is include or not
-console.log(fruits.includes('🍔')); // false
+console.log(fruits.includes("🍔")); // false
 // lastIndexOf: 제일 마지막에 들어있는 값을 출력
 console.clear();
-fruits.push('🍎');
-fruits.unshift('🍎');
+fruits.push("🍎");
+fruits.unshift("🍎");
 console.log(fruits);
-console.log(fruits.indexOf('🍎')); // 제일 첫 번째 사과의 인덱스가 출력됨
-console.log(fruits.lastIndexOf('🍎')); //제일 마지막의 사과의 인덱스가 출력됨
+console.log(fruits.indexOf("🍎")); // 제일 첫 번째 사과의 인덱스가 출력됨
+console.log(fruits.lastIndexOf("🍎")); //제일 마지막의 사과의 인덱스가 출력됨
 
 // Homework:
 // read every array's apis prototype
