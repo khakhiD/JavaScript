@@ -1,5 +1,5 @@
-// JS의 자료형 방식에는 기본형(Premitive; 원시형)과 객체형(Object)가 존재
-// 원시형=기본형(Premitive)
+// JS의 자료형 방식에는 기본형(Primitive; 원시형)과 객체형(Object)가 존재
+// 원시형=기본형(Primitive)
 // - Boolean
 // - null
 // - undefined
