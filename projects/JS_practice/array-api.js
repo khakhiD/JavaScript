@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 // Dreamcoding Javascript Array Quiz
-// 2022. 01. 20 THR
+// 2022. 02. 07 MON
 // author: Shin Dong-Ho
 
 // Q1. make a string out of an array
@@ -9,7 +9,7 @@
 {
   const fruits = ["apple", "banana", "orange"];
   // join() : .join('구분자'); : 배열 원소 전부를 합쳐 하나의 문자열 반환.
-  const q1 = fruits.join(' '); // apple banana orange
+  const q1 = fruits.join(" "); // apple banana orange
   console.log(q1);
   // toString() : 배열을 문자열로 바꾸어 반환
   const toString = fruits.toString(); // apple,banana,orange
@@ -21,7 +21,7 @@
 {
   const fruits = "🍎, 🥝, 🍌, 🍒";
   // split('구분자', 개수) : 구분자를 통해 구분된 개수만큼 배열로 만들어 반환.
-  const q2 = fruits.split(',', 3);
+  const q2 = fruits.split(",", 3);
   console.log(q2);
 }
 
@@ -48,17 +48,17 @@
 
   // splice 사용하기
   // splice(몇번부터, 몇번까지): 삭제해서 반환한다. 기존 배열에 영향.
-  const array2 = [1,2,3,4,5];
-  const q4 = array2.splice(2,4);
-  console.log(array2);            // [1, 2]
-  console.log(`Q4 = ${q4}`);      // [3, 4, 5]
+  const array2 = [1, 2, 3, 4, 5];
+  const q4 = array2.splice(2, 4);
+  console.log(array2); // [1, 2]
+  console.log(`Q4 = ${q4}`); // [3, 4, 5]
   // ❗ 기존 배열에서 빼오는 함수이므로 답이 아님!!
-  
+
   // slice 사용하기: 배열의 특정한 부분을 반환하는 함수.
   // slice(시작, 끝): 끝은 배제된다 ❗ 하나 더 해줘야 함.
-  const array3 = [1,2,3,4,5];
-  const q4_2 = array3.slice(2,5); // 끝은 배제되니까 5로!
-  console.log(q4_2);  // [3,4,5]가 나오고, 기존 배열은 그대로 있다.
+  const array3 = [1, 2, 3, 4, 5];
+  const q4_2 = array3.slice(2, 5); // 끝은 배제되니까 5로!
+  console.log(q4_2); // [3,4,5]가 나오고, 기존 배열은 그대로 있다.
 }
 
 class Student {
@@ -83,10 +83,10 @@ const students = [
   // find((callback 함수)):
   // find(predicate: (this, value, index, obj) -> value);
   // 콜백 함수가 true될 때, 처음 찾은 것을 반환한다.
-  const newStudent = students.find(function(student, index){
+  const newStudent = students.find(function (student, index) {
     return student.score === 90;
   });
-  const result = students.find(student => student.score === 90);
+  const result = students.find((student) => student.score === 90);
   console.log(newStudent);
   console.log(result);
 }
@@ -95,12 +95,10 @@ const students = [
 // students 중 수업에 등록한 학생들을 배열로 만들어라
 {
   // filter( callback => ) : true인 것들을 반환
-  const result = students.filter(
-    student => student.enrolled
-  );
-  const result2 = students.filter(function(student, index){
+  const result = students.filter((student) => student.enrolled);
+  const result2 = students.filter(function (student, index) {
     return student.enrolled;
-  })
+  });
   console.log(result);
   console.log(result2);
 }
@@ -115,7 +113,7 @@ const students = [
   // ❗ 자주 사용되는 메소드
   // 각각의 요소를 함수를 거쳐 새로운 값으로 매핑해주는.. 미친 메소드인듯?
 
-  const result = students.map(student => student.score);
+  const result = students.map((student) => student.score);
   console.log(result);
 }
 
@@ -125,15 +123,15 @@ const students = [
   // some / every : 배열의 모든 요소에 콜백 돌려서 호출
   // some은 결과에 true가 있으면 true를 반환
   // every는 결과가 모두 true일때만 true를 반환
-  const result = students.some(function(student, index){
+  const result = students.some(function (student, index) {
     return student.score < 50;
-  })
-  console.log(result);  //true, A 학생은 45점
+  });
+  console.log(result); //true, A 학생은 45점
 }
 
 // Q9. compute students' average score
 // 학생 평균 점수를 계산하라.
-// ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ 
+// ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗ ❗
 {
   // 배열 메소드 중 매우 강력한 기능을 가진 메서드들
   // 1. map,  2. reduce,  3. forEach
@@ -155,12 +153,13 @@ const students = [
     - 누적값 인수에 제공되는 초기값, 제공하지 않을 경우 배열의 첫 요소 사용
     - 만약 빈 배열에서 초기값이 없을 경우 에러가 발생한다. 
   */
-  const result =  students.reduce(
-    function(acc, cur, i) {
+  const result = students.reduce(
+    function (acc, cur, i) {
       return acc + cur.score;
-    }, 0 // 초기값
+    },
+    0 // 초기값
   );
-  console.log(result/students.length);
+  console.log(result / students.length);
 }
 
 // Q10. make a string containing all the scores
@@ -168,12 +167,38 @@ const students = [
 // 학생들의 모든 점수를 스트링으로 변환하라
 {
   // 학생들의 배열을 먼저 점수로 변환
-  const result = students.map(student => student.score).join();
-  console.log(result);  // 점수 배열로 변환 -> join으로 스트링 변환
+  const result = students.map((student) => student.score).join();
+  console.log(result); // 점수 배열로 변환 -> join으로 스트링 변환
+  // 위와 같은 방식으로 다시
+  const stringScore = students //
+    .map(function (student, index, students) {
+      return student.score;
+    })
+    .join(",");
+  console.log(stringScore);
 
+  // 여기서 만약, 점수가 50점 이상인 아이들만 표시하고 싶다면?
+  // filter(콜백)으로 걸러서 사용해보자.
+  const over50score = students
+    .map((student) => student.score)
+    .filter((score) => score >= 50)
+    .join();
+  console.log(over50score);
 }
 
 // Bonus! do Q10 sorted in ascending order
 // result should be: '45, 66, 80, 88, 90'
 {
+  const q10 = students.map((student) => student.score).sort();
+  console.log(q10);
+
+  // ✅ sort details
+  // sort((a,b) => a - b)
+  // callback의 인자로 이전값 a, 현재값 b를 받아오는데,
+  // 만약 (a-b) 값이 마이너스라면 첫번째 값이 뒤의 값보다 작다고 간주되어 정렬해주는 방식
+
+  const q10_2 = students.map((student) => student.score).sort((a, b) => a - b);
+  console.log(q10_2);
+
+  // 리턴값을 (b - a)로 하면, 내림차순으로 정리된다.
 }
