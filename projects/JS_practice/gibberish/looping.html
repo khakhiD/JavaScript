@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // ✅ report #1 : 값은 무엇일까?
+        {
+            // 답안
+            let i = 3;
+
+            while (i) {
+                console.log(i--); //값은 무엇일까?
+            } // 정답: 3, 2, 1
+        }
+        // ✅ report #2 : 두 값은 같을까? *while문
+        {
+            // 답안
+            let i = 0;
+            while (++i < 5) console.log(i); // 1, 2, 3, 4
+
+            i = 0;
+            while (i++ < 5) console.log(i); // 1, 2, 3, 4, 5
+        }
+        // ✅ report #3 : 어떤 값이 출력될까? *for문
+        {
+            // 답안
+            for (let i = 0; i < 5; i++) console.log(i); // 0, 1, 2, 3, 4
+            for (let i = 0; i < 5; ++i) console.log(i); // 0, 1, 2, 3, 4
+        }
+        // for문의 알고리즘
+        // 1. 모든 작업이 시작되기 전 초기값은 0
+        // 2. i < 5 조건을 만족하는지 확인한다.
+        // 3. 2번이 true이면 본문이 실행, 그 이후에 연산 수행
+
+        // ✅ report #4 : 짝수 출력하기 *for문
+        {
+            // 답안
+            console.clear();
+            for (let i = 2; i <= 10; i++) {
+                if (i % 2 == 0) console.log(i);
+            }
+        }
+
+        // ✅ report #5 : 논리 변화없이 for를 while로 바꾸기
+        {
+            for (let i = 0; i < 3; i++) { console.log(`number ${i}!`); } // 0, 1, 2
+            // 답안
+            i = 0;
+            while (i < 3) {
+                console.log(`number ${i}!`);
+                i++;
+            }
+        }
+
+        // ✅ report #6 : 사용자가 유효한 값을 입력할 때까지
+        {
+            // 사용자가 100보다 큰 숫자를 입력하도록 안내하라
+            // 100을 초과하거나 취소/입력없이 확인 버튼을 누를 경우 창을 띄우지 않는다.
+            // 예외사항 처리 없음
+
+            console.clear();
+            do {
+                inputNumber = prompt("Input number over 100");
+            } while (inputNumber <= 100 && inputNumber);
+        }
+
+        // ✅ report #7 : 소수 출력하기
+        {
+            // 1과 자신 이외에는 자연수로 나눌 수 없는 자연수를 n까지 출력하시오.
+            console.clear();
+            let n = Number(prompt('Input number'));
+            if (n === 10) console.log('n is number');
+
+            nextPrime: // label을 활용
+            for (let i = 2; i <= n; i++) {
+                for (let j = 2; j < i; j++) {
+                    if (i % j == 0) continue nextPrime;
+                }
+                console.log(i);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

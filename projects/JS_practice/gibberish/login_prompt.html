@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let userName = prompt(`Who's there?`, '');
+
+        if (userName == 'Admin') {
+            let pw = prompt('Input password', '');
+            if (pw == 'TheMaster') {
+                alert(`Welcome!`);
+            } else if (pw == '' || pw == null) {
+                alert(`Canceled`);
+            } else {
+                alert(`Wrong password`);
+            }
+        } else if (userName == '' || userName == null) {
+            alert(`Canceled`);
+        } else {
+            alert(`I don't know you`);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

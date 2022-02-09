@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // nullish 병합 연산자 '??'
+        // 최신 문법으로 추가된지 얼마 되지 않았다.
+
+        // ❗ 피연사자 중 하나의 값을 반환한다 
+        // ??를 사용하면 짧은 문법으로 여러 피연산자 중 그 값이 '확정되어있는' 변수를 찾는다.
+        // a ?? b 의 결과 :
+        // a가 null도 아니고 undefined도 아니면 a
+        // 그 외에는 b
+
+        // ❗ x = a ?? b 의 경우
+        //      x = (a !== null && a !== undefined) ? a : b;
+
+        let firstName = null;
+        let lastName = null;
+        let nickName = "바이올렛";
+        // null이나 undefined가 아닌 첫 번째 피연산자
+        const result = (firstName ?? lastName ?? nickName ?? "익명의 사용자");
+        console.log(result); // 바이올렛
+
+        // '??'와 '||'의 차이
+        // - ||는 첫 번째 truthy 값을 반환
+        // - ??는 첫 번째 정의된(defined) 값을 반환
+
+        let height;
+        height = height ?? 100; // 100이 할당됨
+        let example = 0;
+        console.log(example || 100); // 100. 0은 false값이므로 null이나 undefined와 동일 취급
+        console.log(example ?? 100); // 0. 정확하게 null 또는 undefiend일 경우에만 100이 됨.
+        // 이러한 특징으로 높이처럼 0이 할당될 수 있는 변수를 사용해 개발할 때는 ??가 적합할 수 있다.
+
+        // ??는 연산자 우선순위가 5순위로 꽤나 낮다.
+        // ??는 =와 ?보다는 먼저 연산되나, 대부분의 연산자보다는 나중에 평가된다.
+        // 복잡한 표현식에서 ??를 사용시 괄호를 추가하는 것이 좋다.
+
+        // 원치 않는 결과
+        let area = height ?? (100 * width) ?? 50;
+
+        // ❗ 안정성 문제로 ??는 &&나 ||와 함께 사용할 수 없다. (논쟁이 많은 제약사항)
+        // let x = 1 && 2 ?? 3; 의 경우 문법 에러가 발생한다.
+        // 해당 제약을 피하기 위해서는 👌(괄호)를 사용하자.
+        let x = (1 && 2) ?? 3; // 제대로 동작
+        console.log(x); // 2 (&&는 둘 다 값이 참일 경우 두 번째 피연산자를 반환)
+
+        // ❗ ??는 값이 할당된 변수를 빠르게 찾는 연산자이다.
+        // 변수에 기본 값을 할당하는 용도로 자주 사용될 수 있다.
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

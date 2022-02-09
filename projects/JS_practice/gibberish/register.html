@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        button {
+            font-family: inherit;
+            font-size: inherit;
+        }
+    </style>
+    <script>
+        'use strict';
+        function jbSubmit() {
+            const pw1 = document.getElementById('pw1').value;
+            const pw2 = document.getElementById('pw2').value;
+            if (pw1 === pw2) {
+                alert('Confirm Password!');
+                return false;
+            } else { alert('differnet Password!'); }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>register</h1>
+    <form action="register_ok.html" method="POST" onsubmit="return jbSubmit();">
+        <p><input type="text" name="username" placeholder="Username" required></p>
+        <p><input type="password" name="password" placeholder="Password" required id="pw1"></p>
+        <p><input type="password" name="password-confirm" placeholder="Confirm Password" required id="pw2"></p>
+        <p><input type="submit" value="Register"></p>
+    </form>
+</body>
+
+</html>
