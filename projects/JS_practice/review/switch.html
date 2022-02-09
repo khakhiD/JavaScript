@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // ✅ switch/case문 사용법
+        let a = 2 + 2;
+        switch (a) {
+            case 3:
+                console.log('비교 값보다 작습니다.');
+                break;
+            case 4:
+                console.log('비교 값과 일치합니다.');
+                break;
+            case 5:
+                console.log('비교 값보다 큽니다.');
+                break;
+            default:
+                console.log('어떤 값인지 파악되지 않습니다');
+        }
+        // ✅ switch/case 문의 인수엔 어떤 표현식이든 올 수 있다.
+        //    모든 형태의 표현을 인수로 받는다.
+
+        // let a = "1"; let b = 0;
+        // switch(+a) { case b + 1: alert("표현식 +a는 1, 표현식 b+1은 1") break; }
+
+        // ✅ 여러 개의 "case"문 묶기
+        //    코드가 같은 case 문은 한데 묶을 수 있다.
+        // example)
+        let b = 3;
+        switch (b) {
+            case 4: console.log('correct'); break;
+            case 3: // 두 case문을 묶는다.
+            case 5: console.log('incorrect!'); break;
+            default: console.log('???');
+        }
+
+        // ✅ switch 문에서 자료형은 매우 중요하다❗
+        let arg;// = prompt('input value');
+        switch (arg) {
+            case '0':
+            case '1':
+                alert('0 or 1');
+                break;
+            case '2':
+                alert('2');
+                break;
+            case 3:
+                alert(`this code will not run anyway.`);
+                break;
+            default:
+            // alert('unknown answer');
+        }
+        // 0이나 1을 입력한 경우 첫 번째 alert 실행
+        // 2를 입력한 경우 두 번째 alert 문이 실행
+        // 3을 입력하여도 입력받은 값이 문자열이므로 실행되지 않고, default가 실행됨
+
+
+        // ✅ "switch"문을 "if"문으로 변환하기
+        // 아래 코드를 if...else 문으로 변환해보세요
+
+        let browser = 'Whale';
+        switch (browser) {
+            case 'Edge':
+                alert("Edge를 사용하고 계시네요!");
+                break;
+
+            case 'Chrome':
+            case 'Firefox':
+            case 'Safari':
+            case 'Opera':
+                alert('저희 서비스가 지원하는 브라우저를 사용하고 계시네요.');
+                break;
+            default:
+                alert('현재 페이지가 괜찮아 보이길 바랍니다!');
+        }
+
+        // 답안
+        if (browser === 'Edge') {
+            alert("Edge를 사용하고 계시네요!");
+        } else if (browser === 'Chrome'
+            || browser === 'Firefox'
+            || browser === 'Safari'
+            || browser === 'Opera') {
+            alert("저희 서비스가 지원하는 브라우저를 사용하고 계시네요.");
+        } else {
+            alert('현재 페이지가 괜찮아 보이길 바랍니다!');
+        }
+        // switch 문이 훨씬 가독성이 좋다.
+
+
+        // ✅ "if"문을 "switch"문으로 변환하기
+        // 아래 코드를 switch/case 문으로 변환해보세요
+        let c = +prompt('c?', '');
+
+        if (c == 0) {
+            alert(0);
+        }
+        if (c == 1) {
+            alert(1);
+        }
+        if (c == 2 || c == 3) {
+            alert('2,3');
+        }
+
+        // 답안
+        let d = +prompt('d?', ''); // 형변환 응용! '+'를 붙여 숫자로 변환됨
+        switch (d) {
+            case 0:
+                console.log('0');
+                break;
+            case 1:
+                console.log('1');
+                break;
+            case 2:
+            case 3:
+                console.log('2,3');
+                break;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

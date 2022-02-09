@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // ✅ function reveiw (주의할 내용 정리)
+        // * 호출 시, 매개변수에 값을 전달하지 않으면 그 값은 undefined가 된다.
+        // * ??(nullish) 연산자로 값이 넘어오지 않을 때 일반 값처럼 처리할 수 있어 좋다.
+
+        // 📢 return 과 값 사이에 절대 줄을 삽입할 수 없다!
+        // return
+        // (some + long + exp + or + whatever * f(a) + f(b))   이처럼 줄 삽입 하면 안됨.
+        // 혹은 return ( 줄바꿈 ~ 어쩌고 저쩌고 ~ ) 처럼 괄호를 넣어도 괜찮다.
+
+        // ✅ report #1 : "else"는 정말 필요한가?
+        // 아래 코드에서 else문을 삭제해도 기존 코드와 동일하게 작동할 것인가?
+
+        // function checkAge(age) {
+        //     if (age > 18) {
+        //         return true;
+        //     } else {
+        //         // ...
+        //         return confirm('보호자의 동의를 받으셨나요?');
+        //     }
+        // } 답안 : Yes.
+
+        // ✅ report #2 : '?'나 '||'를 사용하여 함수 다시 작성
+        // 아래 함수를 if문을 사용하지 않고 동일하게 동작하는 함수를 2개 작성하세요.
+        // 1. 물음표 연산자 ?를 사용하여 작성, 2. || 연산자를 사용하여 작성
+        function checkAge(age) {
+            if (age > 18) {
+                return true;
+            } else {
+                return confirm('보호자의 동의를 받으셨나요?');
+            }
+        }
+        // 물음표 연산자 'a ? b:c'
+        function answer(age) {
+            return (age > 18) ? true : confirm('보호자의 동의를 받으셨나요?');
+        }
+
+        function answer2(age) {
+            return (age > 18) || confirm('보호자의 동의를 받으셨나요?');
+        }
+
+        // ✅ report #3 : min(a,b) 함수 만들기
+        // a와 b중 작은 값을 반환하는 함수를 만들어보세요.
+        function min(a, b) {
+            if (a < b) {
+                return a;
+            } else {
+                return b;
+            }
+            // 또는
+            // return a > b ? b : a;
+        }
+
+        // ✅ report #4 : pow(x,n) 함수 만들기
+        // x의 n제곱을 반환해주는 함수를 만들어보세요.
+        function pow(x, n) {
+            return x ** n;
+        }
+        function pow2(x, n) {
+            let result = x;
+            for (let i = 1; i < n; i++) {
+                result *= x;
+            } return result;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
