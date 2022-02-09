@@ -70,6 +70,32 @@
                 result *= x;
             } return result;
         }
+
+        // ✅ 화살표 함수
+        // ✅ report #1 : 화살표 함수로 변경하기
+        function ask(question, yes, no) {
+            if (confirm(quesiton)) yes()
+            else no();
+        }
+
+        ask(
+            "동의하십니까?",
+            function () { alert("동의하셨습니다."); },
+            function () { alert("취소 버튼을 누르셨습니다."); }
+        );
+        // 위와 같은 함수를 화살표 함수로 바꿔보세요
+        // 아래는 문서의 정답이지만, 조금 논란이 있다. 
+        ask(
+            "동의하십니까?",
+            () => alert("동의하셨습니다."),
+            () => alert("취소 버튼을 누르셨습니다.")
+        ); // 함수 호출부를 바꾸었다. 문제는 함수를 화살표함수로 바꾸라는 것이었다.
+
+        // 그래서 아래와 같이 바꾸어 보았다.
+        let askArrow = (question, yes, no) =>
+            confirm(question) ? yes() : no();
+        askArrow("동의하십니까?", () => alert("동의"), () => alert("취소"));
+        // 이게 더 정답에 가까워 보인다.
     </script>
 </head>
 
