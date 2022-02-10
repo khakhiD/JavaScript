@@ -1,225 +1,230 @@
 :root {
-    /* Color */
-    --white-color: #fff;
-    --black-color: #0f0f0f;
-    --blue-color: #4880ee;
-    --grey-dark-color: #909090;
-    --grey-light-color: #e0e0e0;
+  /* Color */
+  --white-color: #fff;
+  --black-color: #0f0f0f;
+  --blue-color: #4880ee;
+  --grey-dark-color: #909090;
+  --grey-light-color: #e0e0e0;
 
-    /* Size */
-    --padding: 18px;
+  /* Size */
+  --padding: 18px;
 
-    /* Font Size */
-    --font-large: 18px;
-    --font-medium: 14px;
-    --font-small: 12px;
-    --font-micro: 10px;
-    --font-line: 10px;
-    -webkit-text-size-adjust: 100%;
-
-
+  /* Font Size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+  --font-line: 10px;
+  -webkit-text-size-adjust: 100%;
 }
 
 * {
-    padding: 0px;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
-    line-height: 1.4;
-    background-color: transparent;
+  padding: 0px;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  line-height: 1.4;
+  background-color: transparent;
 }
 
 div {
-    display: block;
+  display: block;
 }
 
 body {
-    font-family: Roboto;
-    display: block;
+  font-family: Roboto;
+  display: block;
 }
 
-ul, li {
-    list-style: none;
+ul,
+li {
+  list-style: none;
 }
 
-button, button:focus {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    display: block;
+button,
+button:focus {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: block;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: var(--padding);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
 }
 
 .header .title {
-    font-size: var(--font-large);
-    color: var(--blue-color);
+  font-size: var(--font-large);
+  color: var(--blue-color);
+}
+
+span.titleName {
+  font-size: ;
 }
 
 .overview {
-    margin-top: 15px;
-    background: var(--blue-color);
-    padding: 24px var(--padding);
+  margin-top: 15px;
+  background: var(--blue-color);
+  padding: 24px var(--padding);
 }
 
 .overview .today {
-    position: relative;
-    padding: 0px;
-    max-width: 768px;
-    margin: 0px auto;
+  position: relative;
+  padding: 0px;
+  max-width: 768px;
+  margin: 0px auto;
 }
 
 .overview .today .metadata {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
 }
 
 .overview .today .metadata .nowText {
-    text-align: center;
-    width: 48px;
-    height: 24px;
-    color: var(--blue-color);
-    background-color: rgb(255, 255, 255);
-    border-radius: 50px;
-    background-size: 31px;
-    background-position: center center;
-    background-repeat: no-repeat;
+  text-align: center;
+  width: 48px;
+  height: 24px;
+  color: var(--blue-color);
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  background-size: 31px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .overview .today .metadata .date {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
-.overview .today .metadata .date .dateText{
-    color: var(--white-color);
-    font-size: 19px;
+.overview .today .metadata .date .dateText {
+  color: var(--white-color);
+  font-size: 19px;
 }
 
 .infoBox {
-    background-color: var(--white-color);
-    margin-top: 16px;
-    padding: 26px 0px 32px;
-    border-radius: 22px;
-    max-width: 768px;
+  background-color: var(--white-color);
+  margin-top: 16px;
+  padding: 26px 0px 32px;
+  border-radius: 22px;
+  max-width: 768px;
 }
 
 .termInfo {
-    display: flex;
-    align-items: center;
-    -webkit-box-align: center;
-    padding: 0 0 10px;
-    margin: 0px 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  -webkit-box-align: center;
+  padding: 0 0 10px;
+  margin: 0px 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .termInfo .termLeft {
-    flex: 1 1 0%;
-    font-size: 14px;
-    font-weight: 700;
+  flex: 1 1 0%;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .termInfo .termRight {
-    flex: 1 1 0%;
-    text-align: right;
-    font-size: 13px;
+  flex: 1 1 0%;
+  text-align: right;
+  font-size: 13px;
 }
 
 .infoBoxList {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 .infoBoxList > li {
-    display: flex;
-    position: relative;
-    padding: 0px;
+  display: flex;
+  position: relative;
+  padding: 0px;
 }
 
 .infoBoxList > li .infoBoxButton {
-    position: relative;
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 10px 30px;
-    transition: background-color 0.2s ease 0s;
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 30px;
+  transition: background-color 0.2s ease 0s;
 }
 
 .infoBoxButtonText {
-    text-align: left;
-    font-weight: 500;
-    font-size: var(--font-small);
-    color: rgba(0, 0, 0, 0.4);
+  text-align: left;
+  font-weight: 500;
+  font-size: var(--font-small);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .infoboxButtonStyle {
-    display: flex;
-    max-width: calc(100% - 20px);
-    align-items: center;
-    -webkit-box-align: center;
+  display: flex;
+  max-width: calc(100% - 20px);
+  align-items: center;
+  -webkit-box-align: center;
 }
 
 .buttontTextLeft {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    line-height: 1.4;
-    background-color: transparent;
-    word-break: keep-all;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 1.4;
+  background-color: transparent;
+  word-break: keep-all;
 }
 
 .buttonTextLeft > .infoBoxButtonTitle {
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 26px;
-    margin-top: 6px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  margin-top: 6px;
 }
 
 /* Arrow */
-.buttonTextRight{ }
-
+.buttonTextRight {
+}
 
 .topNotice {
-    display: relative;
-    padding: 0px 18px;
-    max-width: 768px;
-    margin: 0px auto;
+  display: relative;
+  padding: 0px 18px;
+  max-width: 768px;
+  margin: 0px auto;
 }
 
-.topNotice .topNoticeBox { margin-top: 24px; }
+.topNotice .topNoticeBox {
+  margin-top: 24px;
+}
 .topNotice .topNoticeBox .noticeBtn {
-    display: flex;
-    align-items: center;
-    background-color: var(--white-color);
-    padding: 18px 28px;
-    border-radius: 16px;
-    width:100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--white-color);
+  padding: 18px 28px;
+  border-radius: 16px;
+  width: 100%;
 }
 .topNotice .topNoticeBox .noticeBtn .new {
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 17px;
-    color: #eb2929;
-    background-size: 36px;
-    background-position: center center;
-    min-width: 36px;
-    height: 18px;
-    display: block;
-    margin-top: 1px;
-    background-repeat: no-repeat;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 17px;
+  color: #eb2929;
+  background-size: 36px;
+  background-position: center center;
+  min-width: 36px;
+  height: 18px;
+  display: block;
+  margin-top: 1px;
+  background-repeat: no-repeat;
 }
 .noticeBtn .notice {
-    display: block;
-    margin-left: 4px;
-    font-size: 15px;
-    line-height: 17px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  display: block;
+  margin-left: 4px;
+  font-size: 15px;
+  line-height: 17px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
