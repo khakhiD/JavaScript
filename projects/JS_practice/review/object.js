@@ -58,3 +58,25 @@ alert(user3["likes birds"]); // get
 delete user["likes birds"]; // delete
 
 // 변수를 키로 사용한 것과 같이 문자열뿐만 아니라 모든 표현식의 평가 결과를 프로퍼티 키로 사용할 수 있다.
+
+// ✅ report#1 : 객체야 안녕?
+const user = {};
+user.name = "John";
+user.surname = "Smith";
+user.name = "Pete";
+delete user.name;
+
+// ✅ report#2 : 객체가 비어있는지 확인하기
+
+function isEmpty(obj) {
+  for (let key in obj) {
+    //if the loop has started, there is a property
+    return false;
+  }
+  return true;
+}
+
+let schedule = {};
+alert(isEmpty(schedule)); //true
+schedule["8:30"] = "get up";
+alert(isEmpty(schedule)); //false
