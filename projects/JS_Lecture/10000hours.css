@@ -1,0 +1,323 @@
+@font-face {
+  font-family: 'OTEnjoystoriesBA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
+  url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
+  url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+}
+
+/* 회전 애니메이션 선언 */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+/* adobe color 사이트에서 트렌디한 색상을 선정해보자 */
+body {
+  font-family: "GmarketSansMedium";
+  background-color: #5b2386;
+  color: #fff;
+}
+
+/* 메인 컨텐츠 */
+#contents {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.title .clock_img {
+  width: 265px;
+  height: 265px;
+}
+
+.title_img {
+  position: absolute;
+  width: 564px;
+}
+
+.title_img img {
+  width: 100%;
+  height: auto;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.intro .intro_saying {
+  font-family: "OTEnjoystoriesBA";
+  font-size: 36px;
+  color: #f5df4d;
+  margin-bottom: 50px;
+}
+
+.intro .explain {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+
+.intro .explain p {
+  /* 따옴표 안으로 글자가 들어감 absolute */
+  position: absolute;  
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.intro .explain span {
+  font-family: 'GmarketSansBold';
+  font-size: 20px;
+}
+
+.intro .quotes {
+  position: relative;
+  padding-top: 20px;
+}
+
+/* 사용자 입력 */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 70px;
+}
+
+.inputs div {
+  /* 여기에도 flex를 주는 이유는 결과 화면이 다르기 때문이다.
+    여기에 flex를 주지 않으면 inputs 부분은 column(세로, 열)으로
+    정렬이 된다. 때문에 div 부분에도 flex를 주어 있는 그대로 보이도록 한다. */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inputs input{
+  padding: 15px 20px 15px 20px; 
+  /* 패딩의 순서는 12시, 3시, 6시 9시다. 시계 방향으로 돌아감 */
+  margin: 0 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'GmarketSansMedium';
+  width: 200px;
+}
+
+.inputs input::placeholder {
+  color: #BABCBE;
+}
+
+/* 버튼 공통 스타일 */
+button {
+  display: flex;
+  align-items: center;
+  font-family: 'GmarketSansBold';
+  font-size: 20px;
+  color:#5b2386;
+  background-color: #FCEE21;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 40px;
+  /* 커서가 올라오면 손 모양으로 바뀌는 속성 cursor : pointer */
+  cursor: pointer;
+  /* 단어 단위로 밑으로 내려오게끔 하는 속성 word-break: keep-all */
+  word-break: keep-all;
+}
+
+.start {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.start .btn_wrap {
+  position: relative;
+}
+
+.start .click_img{
+  position: absolute;
+  /* 손가락의 위치가 버튼과 겹치지 않도록 이동시킨다. */
+  right: -75px;
+  bottom: -25px;
+}
+
+/* 결과로딩 */
+.result_loading {
+  display: none;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.result_loading .img_wrap {
+  width: 100px;
+  height: 100px;
+}
+
+.result_loading .img_wrap img {
+  width: 100%;
+  height: auto;
+  /* 회전 애니메이션 적용 */
+  animation: rotate 1.1s infinite linear;
+  /* linear를 빼면 가속도가 붙게된다. */
+}
+/* 결과 페이지 */
+.result {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5;
+  margin-bottom: 80px;
+}
+
+.result .result_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result .result_wrap div {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.result span {
+  /* 해당 20px, 폰트 70px의 공간에 js의 결과값이 들어간다 */
+  padding: 0 20px;
+  font-family: 'GmarketSansBold';
+  font-size: 70px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.buttons .share button {
+  background-color: #fff;
+  margin-left: 20px;
+}
+
+/* 모달 - 훈련하러가기 */
+#modal {
+  /* 위치 고정 fixed */
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+#modal .modal_wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  background-color: #FFF;
+  border-radius: 20px;
+}
+
+#modal .cheer {
+  font-family: 'OTEnjoystoriesBA';
+  color: #5b2386;
+  text-align: center;
+}
+
+#modal .cheer h1 {
+  font-size: 80px;
+}
+
+#modal .cheer h3 {
+  font-size: 30px;
+}
+
+#modal .licat_img {
+  margin-bottom: 20px;
+}
+
+#modal .close_btn{
+  /* 박스에 그림자를 넣는 속성 */
+  /* 요소 값 : x값, y값, 흐릿함, 확산정도, 색상(rgba) */
+  box-shadow: 0px 5px 20px 1px rgba(0,0,0,15%);
+  margin-bottom: 20px;
+}
+
+#modal .btn p {
+  color: #747474;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* 저작권 */
+#copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+#copyright p {
+  font-size: 10px;
+  line-height: 1.5;
+  padding: 20px 0;
+  text-align: center;
+}
