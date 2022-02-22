@@ -321,3 +321,11 @@ button {
   padding: 20px 0;
   text-align: center;
 }
+
+/* 임의로 추가한 CSS */
+#copyright span {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #FCEE21;
+  text-decoration: underline;
+}
