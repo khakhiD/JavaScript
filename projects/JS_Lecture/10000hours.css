@@ -1,5 +1,4 @@
 @font-face {
-<<<<<<< HEAD
   font-family: 'OTEnjoystoriesBA';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
   font-weight: normal;
@@ -33,23 +32,6 @@
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
-=======
-  font-family: "GmarketSansMedium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-.notosanskr * {
-  font-family: "Noto Sans KR", sans-serif;
-}
-
-@keyframes rotate {
-  50% {
-    transform: rotate(180deg);
->>>>>>> 3c0d297106d97312be576cc2cb740d40e4b12ee7
   }
   100% {
     transform: rotate(360deg);
@@ -123,7 +105,6 @@ body {
   justify-content: center;
   text-align: center;
   margin-bottom: 80px;
-<<<<<<< HEAD
   position: relative;
 }
 
@@ -131,21 +112,10 @@ body {
 .intro .explain p {
   /* 따옴표 안으로 글자가 들어감 absolute */
   position: absolute;  
-=======
-}
-
-.intro .quotes {
-  padding-top: 20px;
-}
-
-.intro .explain p {
-  position: absolute;
->>>>>>> 3c0d297106d97312be576cc2cb740d40e4b12ee7
   font-size: 17px;
   line-height: 1.7;
 }
 
-<<<<<<< HEAD
 .intro .explain span {
   font-family: 'GmarketSansBold';
   font-size: 20px;
@@ -204,15 +174,10 @@ button {
   cursor: pointer;
   /* 단어 단위로 밑으로 내려오게끔 하는 속성 word-break: keep-all */
   word-break: keep-all;
-=======
-.inputs {
-  display: flex;
->>>>>>> 3c0d297106d97312be576cc2cb740d40e4b12ee7
 }
 
 .start {
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
   margin-bottom: 80px;
 }
@@ -364,6 +329,3 @@ button {
   color: #FCEE21;
   text-decoration: underline;
 }
-=======
-}
->>>>>>> 3c0d297106d97312be576cc2cb740d40e4b12ee7
