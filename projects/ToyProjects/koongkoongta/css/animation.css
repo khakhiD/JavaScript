@@ -1,0 +1,33 @@
+@keyframes bounce {
+  100% {
+    top: 10%;
+    text-shadow: 0 1px 0 #fff, 0 2px 0 #fff, 0 3px 0 #fff, 0 4px 0 #fff,
+      0 5px 0 #fff, 0 6px 0 #fff, 0 20px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* 회전 애니메이션 선언 */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 붕붕 떠다니는 애니메이션 */
+@keyframes upAndDown {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0, 5px);
+  }
+  75% {
+    transform: translate(0, -5px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}

@@ -11,7 +11,7 @@ body {
 /* adobe color 사이트에서 트렌디한 색상을 선정해보자 */
 body {
   font-family: "GmarketSansMedium";
-  background-color: #fcee21;
+  background-color: aliceblue;
   color: #3f454d;
 }
 
@@ -24,11 +24,6 @@ body {
 }
 
 .header_wrapper {
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin-top: 10px;
   margin-bottom: 40px;
 }
@@ -43,17 +38,24 @@ body {
   padding: 30px 30px 20px 30px;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 0px 5px #3f454d;
+  box-shadow: 0px 0px 15px #3f454d3b;
 }
 
 .inputs hr {
   margin-bottom: 35px;
 }
 
+.inputs_title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: double 1px rgb(223, 223, 223);
+}
 .inputs_title p {
   color: #4463fd;
+  font-family: "GMarketSansMedium";
   font-size: 24px;
-  font-weight: 400;
+  margin: 15px 0px 20px 0px;
 }
 
 .inputs div {
@@ -81,28 +83,6 @@ body {
   color: #babcbe;
 }
 
-/* 버튼 공통 스타일 */
-button {
-  display: flex;
-  align-items: center;
-  font-family: "OTEnjoystoriesBA";
-  font-size: 36px;
-  background-color: transparent;
-  color: #526df2;
-  border: 1px solid #526df2;
-  border-radius: 30px;
-  padding: 5px 40px;
-  cursor: pointer;
-  word-break: keep-all;
-}
-.start_btn:hover {
-  padding: 6px 40px;
-  word-break: keep-all;
-  color: #fff;
-  background-color: #526df2;
-  border: none;
-}
-
 /* title 부분 */
 .title {
   display: flex;
@@ -112,8 +92,8 @@ button {
 
 .title p {
   font-size: 24px;
-  color: #4463fd;
-  text-shadow: 0px 0px 5px #ffffff, 2px 2px 0px #fffb00;
+  color: #3f454d;
+  text-shadow: 1px 1px 10px rgb(255, 255, 255);
 }
 
 .titleName {
@@ -121,14 +101,53 @@ button {
   justify-content: center;
   font-family: "OTEnjoystoriesBA";
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 .titleName p {
   color: #4463fd;
-  font-size: 120px;
-  text-shadow: 0px 0px 5px #ffffff, 2px 2px 0px #fffb00, 0px 5px 0px #fff;
+  font-size: 100px;
+}
+.titleName p span {
+  text-shadow: 0px 0px 5px #ffffff, 0px 5px 0px #fff;
+  position: relative;
+  top: 20px;
+  animation: bounce 0.3s ease infinite alternate;
+}
+.titleName p span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.titleName p span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.titleName p span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.titleName p span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.titleName p span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.titleName p span:nth-child(7) {
+  animation-delay: 0.6s;
 }
 
-/* start */
+/* 버튼 공통 스타일 */
+button {
+  display: flex;
+  align-items: center;
+  font-family: "OTEnjoystoriesBA";
+  font-size: 36px;
+  background-color: transparent;
+  color: #526df2;
+  border: 3px solid #526df2;
+  border-radius: 30px;
+  padding: 5px 40px;
+  cursor: pointer;
+  word-break: keep-all;
+}
+
+/* start + start_btn */
 .start {
   display: flex;
   justify-content: center;
@@ -137,21 +156,38 @@ button {
 
 .btn_wrapper {
   position: relative;
+  margin-top: 30px;
+}
+
+.start_btn {
+  /* animation: upAndDown 1s infinite; */
+  /* animation-direction: altenate; */
+  /* animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); */
+}
+
+.start_btn:hover {
+  padding: 8px 40px;
+  word-break: keep-all;
+  color: #fff;
+  background-color: #526df2;
+  border: none;
 }
 
 /* 저작권 */
 #copyright {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   padding-top: 30px;
   padding-bottom: 30px;
+  bottom: 0%;
 }
 
 #copyright p {
   font-size: 10px;
   line-height: 1.5;
-  padding: 20px 0;
+  padding: 10px 0;
   text-align: center;
   color: #0000004f;
 }
