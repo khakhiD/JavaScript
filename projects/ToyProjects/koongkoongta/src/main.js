@@ -1,12 +1,14 @@
 const startButton = document.querySelector(".start_btn");
 const loading = document.querySelector(".start_loading");
-const 
+const playWindow = document.querySelector(".playWindow");
+const inputWindow = document.querySelector(".inputs");
+const startWindow = document.querySelector(".start");
 
 function caution() {
   const nopValue = document.querySelector("#nop_value");
   const wordLengthValue = document.querySelector("#wordLength_value");
-  const nopValue_int = Number(nopValue);
-  const wordLengthValue_int = Number(wordLengthValue);
+  const nopValue_int = Number(nopValue.value);
+  const wordLengthValue_int = Number(wordLengthValue.value);
 
   if (nopValue.value == "") {
     alert("인원 수가 입력되지 않았습니다.");
@@ -28,7 +30,11 @@ function caution() {
   }
 
   // 아래부터 개발할 것
-
+  setTimeout(function () {
+    inputWindow.style.display = "none";
+    startWindow.style.display = "none";
+    playWindow.style.display = "flex";
+  }, 500);
 }
 
 startButton.addEventListener("click", caution);
