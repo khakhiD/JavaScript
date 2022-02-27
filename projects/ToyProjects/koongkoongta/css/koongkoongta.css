@@ -196,8 +196,85 @@ button {
 
 /* playWindow */
 .playWindow {
-  display: none;
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+  max-width: 600px;
+  max-height: 600px;
+  margin-bottom: 35px;
+  padding: 30px 30px 10px 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 15px 15px #3f454d3b;
 }
+
+.mainCommand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.mainCommand p {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.playWindow_title {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: double 1px rgb(223, 223, 223);
+}
+
+.playWindow_title p {
+    color: #4463fd;
+    font-family: "GMarketSansMedium";
+    font-size: 24px;
+    margin: 15px 0px 20px 0px;
+}
+
+.submit_btn {
+  display: flex;
+  align-items: center;
+  font-family: "GMarketSansBold";
+  font-size: 14px;
+  background-color: #526df2;
+  color: #fff;
+  border: 1px solid #526df2;
+  border-radius: 0px;
+  padding: 5px 15px;
+  cursor: pointer;
+  word-break: keep-all;
+}
+
+.mainCommand #submit {
+  padding: 5px 10px 5px 10px;
+  /* 패딩의 순서는 12시, 3시, 6시 9시다. 시계 방향으로 돌아감 */
+  margin: 0 10px;
+  border: solid 1px #babcbe;
+  font-size: 15px;
+  font-family: "GmarketSansMedium";
+  width: 200px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 저작권 */
 #copyright {
