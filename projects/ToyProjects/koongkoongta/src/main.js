@@ -30,7 +30,9 @@ function caution() {
     timeLimit_int < 4 ||
     timeLimit_int > 30
   ) {
-    alert("인원 수 최대 4명, 단어 수는 최대 6글자, \n시간 제한은 5초에서 30초까지 설정 가능합니다.");
+    alert(
+      "인원 수 최대 4명, 단어 수는 최대 6글자, \n시간 제한은 5초에서 30초까지 설정 가능합니다."
+    );
     console.log("제한 테스트");
     return false;
   }
@@ -44,13 +46,11 @@ function caution() {
     playWindow.style.display = "flex";
   }, 500);
 
-  koongkoongta(nopValue_int, wordLengthValue_int);
+  ruleSet(nopValue_int, wordLengthValue_int, timeLimit_int);
+  // koongkoongta(nopValue_int, wordLengthValue_int);
 }
 
 startButton.addEventListener("click", caution);
-
-
-
 
 // Main logic for game
 function koongkoongta(nop, length) {
@@ -63,31 +63,43 @@ function koongkoongta(nop, length) {
   let newWord;
 
   function onClickEvent() {
-    if(nop) {
-      if(!word || word[word.length - 1] === newWord[0]) {
-        if(newWord.length === 3) {
+    if (nop) {
+      if (!word || word[word.length - 1] === newWord[0]) {
+        if (newWord.length === 3) {
           word = newWord;
           word.textContent = word;
           const order = Number(order.textContent);
-          if(order+1 > nop) {
+          if (order + 1 > nop) {
             order.textContent = 1;
           } else {
-            order.textContent = order+1;
+            order.textContent = order + 1;
           }
         } else {
-          alert('${length}글자 단어를 입력하세요.');
+          alert("${length}글자 단어를 입력하세요.");
         }
       } else {
-        alert('틀렸습니다.');
+        alert("틀렸습니다.");
       }
-      input.value = '';
+      input.value = "";
       input.focus();
     } else {
-      alert('참가 인원이 정해지지 않았습니다.');
+      alert("참가 인원이 정해지지 않았습니다.");
     }
-  };
+  }
 }
 
 function onInput() {
   newWord = event.target.value;
+}
+
+// 설정된 규칙 화면에 띄우는 펑션 ruleSet()
+function ruleSet(nop, wordLength, timeLimit) {
+  const ruleNOP = document.querySelector(".ruleNOP");
+  const ruleWL = document.querySelector(".ruleWL");
+  const ruleTL = document.querySelector(".ruleTL");
+  ruleNOP.innerText = Number(nop);
+  ruleWL.innerText = Number(wordLength);
+  ruleTL.innerText = Number(timeLimit);
+
+  return true;
 }
