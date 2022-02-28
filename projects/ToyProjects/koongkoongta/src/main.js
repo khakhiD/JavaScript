@@ -6,6 +6,7 @@ const startWindow = document.querySelector(".start");
 const headTitle = document.querySelector(".title");
 const titleName = document.querySelector(".header_wrapper");
 
+
 function caution() {
   const nopValue = document.querySelector("#nop_value");
   const wordLengthValue = document.querySelector("#wordLength_value");
@@ -50,47 +51,25 @@ function caution() {
   // koongkoongta(nopValue_int, wordLengthValue_int);
 }
 
-startButton.addEventListener("click", caution);
-
 // Main logic for game
-function koongkoongta(nop, length) {
-  const inputWord = document.querySelector(".inputWord");
+const koongkoongta = (nop, length) => {
   const submit = document.querySelector(".submitBtn");
-  const input = document.querySelector("input");
-
-  // 기존 제시어
+  const inputText = documnet.querySelector("#submit_value");
+  // var
   let word;
   let newWord;
+  let firstTurn = 1;
+  let turn = firstTurn;
 
-  function onClickEvent() {
-    if (nop) {
-      if (!word || word[word.length - 1] === newWord[0]) {
-        if (newWord.length === 3) {
-          word = newWord;
-          word.textContent = word;
-          const order = Number(order.textContent);
-          if (order + 1 > nop) {
-            order.textContent = 1;
-          } else {
-            order.textContent = order + 1;
-          }
-        } else {
-          alert("${length}글자 단어를 입력하세요.");
-        }
-      } else {
-        alert("틀렸습니다.");
-      }
-      input.value = "";
-      input.focus();
-    } else {
-      alert("참가 인원이 정해지지 않았습니다.");
-    }
-  }
+ const onClickInputBtn = () => {
+   
 }
 
-function onInput() {
-  newWord = event.target.value;
-}
+const onInput = (event) => {
+  neWord = event.target.value;
+};
+
+inputText.addEventListener("input", onInput);
 
 // 설정된 규칙 화면에 띄우는 펑션 ruleSet()
 function ruleSet(nop, wordLength, timeLimit) {
@@ -103,3 +82,5 @@ function ruleSet(nop, wordLength, timeLimit) {
 
   return true;
 }
+
+startButton.addEventListener("click", caution);

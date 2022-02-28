@@ -200,27 +200,12 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 600px;
   max-width: 600px;
-  max-height: 600px;
   margin-bottom: 35px;
   padding: 30px 30px 10px 30px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 15px 15px #3f454d3b;
-}
-
-.mainCommand {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.mainCommand p {
-  font-size: 18px;
-  margin-right: 5px;
 }
 
 .playTop {
@@ -230,6 +215,22 @@ button {
   width: 100%;
   padding-bottom: 10px;
   border-bottom: 1px solid #babcbe;
+}
+
+.playWindow_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-right: 30px;
+  border-right: double 1px rgb(223, 223, 223);
+}
+
+.playWindow_title p {
+  /* color: #4463fd; */
+  font-family: "GMarketSansMedium";
+  font-size: 24px;
 }
 
 .playWindow_rule {
@@ -250,49 +251,158 @@ button {
 
 .playWindow_rule p span {
   font-size: 15px;
-  color: #ffffff;
+  color: #526df2;
   font-family: "GMarketSansBold";
 }
 
-.playWindow_title {
+/* 캐릭터 부분 */
+.playImg {
+  width: 100%;
+}
+.playImg .playImgWrap {
   display: flex;
-  flex-direction: column;
+  flex-flow: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  padding: 30px 0px 30px 0px;
+}
+/* 말풍선 부분 */
+.player1_ballon {
+  position: relative;
+  margin: 15px 0px 0px 0px;
+  width: 160px;
+  height: 60px;
+  background: rgb(255, 245, 153);
+  border-radius: 10px;
+  /* animation: upAndDown_min 0.5s infinite; */
+}
+.player1_ballon:after {
+  border-top: 0px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgb(255, 245, 153);
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 68px;
+}
+.player2_ballon {
+  position: relative;
+  margin: 15px 0px 0px 0px;
+  width: 160px;
+  height: 60px;
+  background: pink;
+  border-radius: 10px;
+  /* animation: upAndDown_min 0.5s infinite; */
+}
+.player2_ballon:after {
+  border-top: 0px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid pink;
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 68px;
+}
+
+.player1_wrap,
+.player2_wrap {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.player1_name,
+.player2_name {
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding-right: 30px;
-  border-right: double 1px rgb(223, 223, 223);
-}
-
-.playWindow_title p {
-  color: #4463fd;
+  margin-bottom: 20px;
+  width: 25px;
+  height: 25px;
+  color: #3f454d;
+  border-bottom: solid 2px;
+  border-bottom-color: #919191;
+  font-size: 15px;
   font-family: "GMarketSansMedium";
-  font-size: 24px;
+}
+.player1_name {
+  background-color: #fff599;
+}
+.player2_name {
+  background-color: pink;
 }
 
-.submit_btn {
+.player1_img,
+.player2_img {
+  opacity: 85%;
+}
+.player2_img {
+  transform: scaleX(-1);
+}
+
+/* 입력부 playContent */
+.playContent {
+  display: flex;
+  flex-flow: row;
+  margin: 0px 0px 30px 0px;
+  justify-content: center;
+  align-items: center;
+  width: 510px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 15px 15px #3f454d3b;
+}
+
+.mainCommand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px 10px 0px;
+}
+
+.mainCommand p {
+  font-family: "GMarketSansBold";
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.mainCommand #submit_value {
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 1;
+  padding: 5px 10px 5px 10px;
+  /* 패딩의 순서는 12시, 3시, 6시 9시다. 시계 방향으로 돌아감 */
+  margin: 0 10px;
+  border-bottom: solid 1px #babcbe;
+  font-size: 18px;
+  font-family: "GmarketSansMedium";
+  width: 250px;
+  text-align: center;
+}
+
+.mainCommand #submit_value:focus {
+  animation: blink 1s infinite;
+  outline-width: 0px;
+  border-bottom: solid 1px #526df2;
+}
+
+.mainCommand .submit_btn {
   display: flex;
   align-items: center;
   font-family: "GMarketSansBold";
   font-size: 12px;
-  background-color: transparent;
   color: #526df2;
-  border: 1px solid #526df2;
-  border-radius: 10px;
+  border: none;
+  border-radius: 0px;
   padding: 5px 15px;
   cursor: pointer;
   word-break: keep-all;
-}
-
-.mainCommand #submit {
-  padding: 5px 10px 5px 10px;
-  /* 패딩의 순서는 12시, 3시, 6시 9시다. 시계 방향으로 돌아감 */
-  margin: 0 10px;
-  border: solid 1px #babcbe;
-  font-size: 18px;
-  font-family: "GmarketSansMedium";
-  width: 240px;
-  text-align: center;
 }
 
 /* 저작권 */
