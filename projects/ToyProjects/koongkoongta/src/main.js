@@ -1,10 +1,14 @@
 const startButton = document.querySelector(".start_btn");
+const startWindow = document.querySelector(".inputs");
+const startWrap = document.querySelector(".start");
+
 const loading = document.querySelector(".start_loading");
 const playWindow = document.querySelector(".playWindow");
-const inputWindow = document.querySelector(".inputs");
-const startWindow = document.querySelector(".start");
 const headTitle = document.querySelector(".title");
 const titleName = document.querySelector(".header_wrapper");
+const inputWindow = document.querySelector(".playContent");
+const submit = document.querySelector(".submitBtn");
+const inputText = document.querySelector("#submit_value");
 
 function caution() {
   const nopValue = document.querySelector("#nop_value");
@@ -37,23 +41,22 @@ function caution() {
     return false;
   }
 
-  // 아래부터 개발할 것
   setTimeout(function () {
-    inputWindow.style.display = "none";
     startWindow.style.display = "none";
     headTitle.style.display = "none";
+    startWrap.style.display = "none";
     titleName.style.margin = "20px 0px 20px 0px";
     playWindow.style.display = "flex";
+    inputWindow.style.display = "flex";
   }, 500);
 
   ruleSet(nopValue_int, wordLengthValue_int, timeLimit_int);
+  inputText.focus();
   // koongkoongta(nopValue_int, wordLengthValue_int);
 }
 
 // Main logic for game
 const koongkoongta = (nop, length) => {
-  const submit = document.querySelector(".submitBtn");
-  const inputText = documnet.querySelector("#submit_value");
   // var
   let word;
   let newWord;

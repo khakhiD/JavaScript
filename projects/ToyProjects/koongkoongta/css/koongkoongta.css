@@ -197,7 +197,6 @@ button {
 /* playWindow */
 .playWindow {
   display: none;
-  display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 600px;
@@ -347,7 +346,7 @@ button {
 
 /* 입력부 playContent */
 .playContent {
-  display: flex;
+  display: none;
   flex-flow: row;
   margin: 0px 0px 30px 0px;
   justify-content: center;
