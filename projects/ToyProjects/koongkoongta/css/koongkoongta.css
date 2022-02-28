@@ -277,6 +277,17 @@ button {
   border-radius: 10px;
   /* animation: upAndDown_min 0.5s infinite; */
 }
+.player2_ballon {
+  position: relative;
+  margin: 15px 0px 0px 0px;
+  width: 160px;
+  height: 60px;
+  background: pink;
+  border-radius: 10px;
+  /* animation: upAndDown_min 0.5s infinite; */
+}
+
+/* 말풍선 윗 꼬리 */
 .player1_ballon:after {
   border-top: 0px solid transparent;
   border-left: 10px solid transparent;
@@ -286,15 +297,6 @@ button {
   position: absolute;
   top: -10px;
   left: 68px;
-}
-.player2_ballon {
-  position: relative;
-  margin: 15px 0px 0px 0px;
-  width: 160px;
-  height: 60px;
-  background: pink;
-  border-radius: 10px;
-  /* animation: upAndDown_min 0.5s infinite; */
 }
 .player2_ballon:after {
   border-top: 0px solid transparent;
@@ -389,7 +391,7 @@ button {
 .mainCommand #submit_value:focus {
   animation: blink 1s infinite;
   outline-width: 0px;
-  border-bottom: solid 1px #526df2;
+  border-bottom: solid 2px #526df2;
 }
 
 .mainCommand .submit_btn {

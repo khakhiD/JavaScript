@@ -6,7 +6,6 @@ const startWindow = document.querySelector(".start");
 const headTitle = document.querySelector(".title");
 const titleName = document.querySelector(".header_wrapper");
 
-
 function caution() {
   const nopValue = document.querySelector("#nop_value");
   const wordLengthValue = document.querySelector("#wordLength_value");
@@ -61,15 +60,16 @@ const koongkoongta = (nop, length) => {
   let firstTurn = 1;
   let turn = firstTurn;
 
- const onClickInputBtn = () => {
-   
-}
+  const onClickInputBtn = () => {
+    console.log(word);
+  };
 
-const onInput = (event) => {
-  neWord = event.target.value;
+  const onInput = (event) => {
+    newWord = event.target.value;
+  };
 };
 
-inputText.addEventListener("input", onInput);
+// inputText.addEventListener('input', onInput);
 
 // 설정된 규칙 화면에 띄우는 펑션 ruleSet()
 function ruleSet(nop, wordLength, timeLimit) {
