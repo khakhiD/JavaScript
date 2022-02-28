@@ -53,7 +53,7 @@
         <div class="announce">
             <p>
                 ※ 인원 수는 최대 4명까지, 글자 수는 최대 6글자 단어,<br>
-                입력 시간은 5초 ~ 30초까지 설정할 수 있습니다.
+                입력 시간은 5초 ~ 60초까지 설정할 수 있습니다.
             </p>
         </div>
     </div>
@@ -100,10 +100,17 @@
         </div>
     </div>
     <div class="playContent">
-        <div class="mainCommand">
-            <p>Player</p><span>1</span>
-            <input type="text" id="submit_value" placeholder="단어를 입력하세요.">
-            <button class="submit_btn">ENTER ↲</button>
+        <div class="playContent_wrap">
+            <div class="mainCommand">
+                <p>Player</p><span>1</span>
+                <input type="text" id="submit_value" autofocus placeholder="단어를 입력하세요.">
+                <button class="submit_btn">ENTER ↲</button>
+            </div>
+            <div class="timeBar">
+                <span class="timeBar_seconds"></span>
+                <div class="timeBar_progress">
+                </div>
+            </div>
         </div>
     </div>
     <!-- footer -->

@@ -32,10 +32,10 @@ function caution() {
     wordLengthValue_int > 6 ||
     wordLengthValue_int < 1 ||
     timeLimit_int < 4 ||
-    timeLimit_int > 30
+    timeLimit_int > 60
   ) {
     alert(
-      "인원 수 최대 4명, 단어 수는 최대 6글자, \n시간 제한은 5초에서 30초까지 설정 가능합니다."
+      "인원 수 최대 4명, 단어 수는 최대 6글자, \n시간 제한은 5초에서 60초까지 설정 가능합니다."
     );
     console.log("제한 테스트");
     return false;
@@ -51,10 +51,38 @@ function caution() {
   }, 500);
 
   ruleSet(nopValue_int, wordLengthValue_int, timeLimit_int);
-  inputText.focus();
+  timeBar(timeLimit_int);
   // koongkoongta(nopValue_int, wordLengthValue_int);
 }
 
+let totalCount = 0;
+let count = 0;
+let time = 0;
+const t_seconds = document.querySelector(".timeBar_seconds");
+const t_bar = document.querySelector(".timeBar");
+const t_progress = document.querySelector(".timeBar_progress");
+
+// 시간제한 막대그래프
+function timeBar(seconds) {
+  clearInterval(time);
+  count = seconds * 100; // 일단 5로 설정
+  totalCount = count;
+  time = setInterval("timer_frame()", 10); // 0.1초 단위로 실행
+}
+
+function timer_frame() {
+  count = count - 1; // 0.1초씩 뺀다
+  t_seconds.innerText = (count / 100).toFixed(1);
+  percentage = (count / totalCount) * 100;
+  t_progress.style.width = percentage + "%";
+  //
+  // ✅ 추가 입력에 오류가 없었다면 인터벌 클리어하는 기능 추가할 것
+  //
+  if (count == 0) {
+    clearInterval(time); //시간 초기화
+    alert("시간 완료");
+  }
+}
 // Main logic for game
 const koongkoongta = (nop, length) => {
   // var
@@ -71,8 +99,6 @@ const koongkoongta = (nop, length) => {
     newWord = event.target.value;
   };
 };
-
-// inputText.addEventListener('input', onInput);
 
 // 설정된 규칙 화면에 띄우는 펑션 ruleSet()
 function ruleSet(nop, wordLength, timeLimit) {

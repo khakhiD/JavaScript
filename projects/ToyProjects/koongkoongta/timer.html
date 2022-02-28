@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <form action="" name="frm">
+        <div align="center">
+            <select id="selid" name="myChoice">
+                <option value="180">원하는 시간을 선택해주십시오(기본:3분)</option>
+                <option value="300">5분</option>
+                <option value="180">3분</option>
+                <option value="150">2분 30초</option>
+                <option value="120">2분</option>
+                <option value="60">1분</option>
+                <option value="10">10초</option>
+            </select>
+            <input type="button" value="GO!" onclick="noodle()">
+            <span id="countdown">time selected</span>
+        </div>
+
+    </form>
+    <script type="text/javascript">
+        var count = 0;
+        var time = 0;
+        var choice = 0;
+
+        function noodle() {
+            clearInterval(time);
+            choice = document.frm.myChoice.selectedIndex; //정한 시간
+            count = parseInt(document.frm.myChoice.options[choice].value) * 10; //정수화
+            time = setInterval("myTimer()", 100); // 0.1초단위로 myTimer 실행
+        }
+        function myTimer() {
+            count = count - 1; //0.1초씩 뺀다
+            document.getElementById("countdown").innerHTML
+                = "완료까지 <b>" + count + "</b>초 남았습니다.";
+            if (count == 0) {
+                clearInterval(time);	// 시간 초기화
+                alert("시간이 완료되었습니다.")
+            }
+        }
+    </script>
+
+</body>
+
+</html>

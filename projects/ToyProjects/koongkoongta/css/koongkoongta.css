@@ -75,6 +75,7 @@ body {
   border-radius: 10px;
   font-size: 20px;
   font-family: "GmarketSansMedium";
+  color: #2245f1;
   width: 60px;
   text-align: center;
 }
@@ -348,9 +349,16 @@ button {
 .playContent {
   display: none;
   flex-flow: row;
-  margin: 0px 0px 30px 0px;
   justify-content: center;
   align-items: center;
+}
+
+.playContent_wrap {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 30px 0px;
   width: 510px;
   height: auto;
   background-color: #fff;
@@ -404,6 +412,40 @@ button {
   padding: 5px 15px;
   cursor: pointer;
   word-break: keep-all;
+}
+
+/* timeBar */
+.timeBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto 10px auto;
+  width: 460px;
+  background: #ddd;
+  border-radius: 10px;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.timeBar_progress {
+  position: relative;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 12px;
+  background: #4463fd;
+  font-family: "GMarketSansMedium";
+}
+.timeBar_seconds {
+  position: absolute;
+  font-family: "GMarketSansMedium";
+  /* text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; */
+  font-size: 6px;
+  color: #fff;
+  z-index: 1;
 }
 
 /* 저작권 */
