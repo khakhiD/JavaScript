@@ -8,9 +8,15 @@ const headTitle = document.querySelector(".title");
 const titleName = document.querySelector(".header_wrapper");
 const inputWindow = document.querySelector(".playContent");
 const submit = document.querySelector(".submitBtn");
-const inputText = document.querySelector("#submit_value");
+const submit_value = document.querySelector("#submit_value");
 
-function caution() {
+const firstOrder = document.querySelector("#firstOrder");
+const firstOrder_value = document.querySelector("#firstOrder_input");
+const firstOrder_submitBtn = document.querySelector(".firstOrder_submitBtn");
+const firstOrder_quitBtn = document.querySelector(".firstOrder_quitBtn");
+
+// 게임 시작 함수
+function gameStart() {
   const nopValue = document.querySelector("#nop_value");
   const wordLengthValue = document.querySelector("#wordLength_value");
   const timeLimitValue = document.querySelector("#timeLimit_value");
@@ -27,50 +33,51 @@ function caution() {
     wordLengthValue.focus();
     return false;
   } else if (
-    nopValue_int > 4 ||
-    nopValue_int < 2 ||
     wordLengthValue_int > 6 ||
     wordLengthValue_int < 1 ||
     timeLimit_int < 4 ||
     timeLimit_int > 60
   ) {
     alert(
-      "인원 수 최대 4명, 단어 수는 최대 6글자, \n시간 제한은 5초에서 60초까지 설정 가능합니다."
+      "단어 수는 최대 6글자, \n시간 제한은 5초에서 60초까지 설정 가능합니다."
     );
     console.log("제한 테스트");
     return false;
+  } else if (nopValue_int != 2) {
+    alert("현재는 2인 모드만 지원합니다.\n죄송합니다 :(");
+    return false;
   }
 
-  setTimeout(function () {
+  setTimeout(() => {
     startWindow.style.display = "none";
     headTitle.style.display = "none";
     startWrap.style.display = "none";
     titleName.style.margin = "20px 0px 20px 0px";
     playWindow.style.display = "flex";
     inputWindow.style.display = "flex";
+    ruleSet(nopValue_int, wordLengthValue_int, timeLimit_int);
+    openFirstOrder(wordLengthValue_int);
+    firstOrder_value.focus();
   }, 500);
 
-  ruleSet(nopValue_int, wordLengthValue_int, timeLimit_int);
   timeBar(timeLimit_int);
-  // koongkoongta(nopValue_int, wordLengthValue_int);
 }
 
 let totalCount = 0;
 let count = 0;
 let time = 0;
-const t_seconds = document.querySelector(".timeBar_seconds");
-const t_bar = document.querySelector(".timeBar");
-const t_progress = document.querySelector(".timeBar_progress");
 
-// 시간제한 막대그래프
+// 시간제한 막대그래프 1
 function timeBar(seconds) {
   clearInterval(time);
-  count = seconds * 100; // 일단 5로 설정
+  count = seconds * 100;
   totalCount = count;
-  time = setInterval("timer_frame()", 10); // 0.1초 단위로 실행
+  time = setInterval("timer_frame()", 10); // 0.01초 단위로 실행
 }
-
+// 시간제한 막대그래프 구현 2
 function timer_frame() {
+  const t_seconds = document.querySelector(".timeBar_seconds");
+  const t_progress = document.querySelector(".timeBar_progress");
   count = count - 1; // 0.1초씩 뺀다
   t_seconds.innerText = (count / 100).toFixed(1);
   percentage = (count / totalCount) * 100;
@@ -83,22 +90,6 @@ function timer_frame() {
     alert("시간 완료");
   }
 }
-// Main logic for game
-const koongkoongta = (nop, length) => {
-  // var
-  let word;
-  let newWord;
-  let firstTurn = 1;
-  let turn = firstTurn;
-
-  const onClickInputBtn = () => {
-    console.log(word);
-  };
-
-  const onInput = (event) => {
-    newWord = event.target.value;
-  };
-};
 
 // 설정된 규칙 화면에 띄우는 펑션 ruleSet()
 function ruleSet(nop, wordLength, timeLimit) {
@@ -112,4 +103,50 @@ function ruleSet(nop, wordLength, timeLimit) {
   return true;
 }
 
-startButton.addEventListener("click", caution);
+// 첫 제시어 입력 모달 오픈
+function openFirstOrder(wordLength) {
+  firstOrder_setPlaceholder(wordLength);
+  firstOrder.style.display = "flex";
+}
+
+// 첫 제시어 입력 모달 끄기
+function closeFirstOrder() {
+  firstOrder.style.display = "none";
+}
+
+// 첫 제시어 입력 모달 placeholder 단어 수 받아오기
+function firstOrder_setPlaceholder(wordLenth) {
+  firstOrder_value.placeholder = wordLenth + "글자 단어 입력";
+  firstOrder_value.focus();
+}
+
+function wordSubmit() {
+  const inputText = document.querySelector("#submit_value").value;
+}
+
+function firstWordSubmit() {
+  const wordLength = document.querySelector("#wordLength_value").value;
+  const firstWord = document.querySelector("#firstOrder_input").value;
+  console.log(firstWord);
+  const player1Balloon_text = document.querySelector(".player1_balloon_text");
+  if (firstWord.length == wordLength) {
+    closeFirstOrder();
+    player1Balloon_text.innerText = firstWord;
+  } else {
+    console.log("단어 수가 맞지 않습니다.");
+    return false;
+  }
+}
+
+// EventListeners
+startButton.addEventListener("click", gameStart);
+submit.addEventListener("click", wordSubmit);
+submit_value.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) wordSubmit();
+}); // Enter Key Auto Submit
+
+firstOrder_submitBtn.addEventListener("click", firstWordSubmit);
+firstOrder_value.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) firstWordSubmit();
+}); // Enter Key Auto Submit
+firstOrder_quitBtn.addEventListener("click", closeFirstOrder);
