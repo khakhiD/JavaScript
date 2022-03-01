@@ -140,10 +140,10 @@ function firstWordSubmit() {
 
 // EventListeners
 startButton.addEventListener("click", gameStart);
-submit.addEventListener("click", wordSubmit);
-submit_value.addEventListener("keyup", (e) => {
-  if (e.keyCode === 13) wordSubmit();
-}); // Enter Key Auto Submit
+// submit.addEventListener("click", wordSubmit);
+// submit_value.addEventListener("keyup", (e) => {
+//   if (e.keyCode === 13) wordSubmit();
+// }); // Enter Key Auto Submit
 
 firstOrder_submitBtn.addEventListener("click", firstWordSubmit);
 firstOrder_value.addEventListener("keyup", (e) => {
