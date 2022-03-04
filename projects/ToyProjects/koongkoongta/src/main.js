@@ -15,6 +15,9 @@ const firstOrder_value = document.querySelector("#firstOrder_input");
 const firstOrder_submitBtn = document.querySelector(".firstOrder_submitBtn");
 const firstOrder_quitBtn = document.querySelector(".firstOrder_quitBtn");
 
+const modalWindow = document.querySelector("#modal");
+const modalButton = document.querySelector(".modal_okayBtn");
+
 // 게임 시작 함수
 function gameStart() {
   const nopValue = document.querySelector("#nop_value");
@@ -115,8 +118,9 @@ function closeFirstOrder() {
 }
 
 // 첫 제시어 입력 모달 placeholder 단어 수 받아오기
-function firstOrder_setPlaceholder(wordLenth) {
-  firstOrder_value.placeholder = wordLenth + "글자 단어 입력";
+function firstOrder_setPlaceholder(wordLength) {
+  let wl = wordLength;
+  firstOrder_value.placeholder = wl + "글자 단어 입력";
   firstOrder_value.focus();
 }
 
@@ -133,21 +137,23 @@ function firstWordSubmit() {
     closeFirstOrder();
     player1Balloon_text.innerText = firstWord;
   } else {
-    console.log("단어 수가 맞지 않습니다.");
     modalOpen();
-    return false;
+    closeFirstOrder();
+    setTimeout(openFirstOrder(), 200);
   }
 }
 
 function modalOpen(){
-  const modalWindow = document.querySelector("#modal");
-  const modalButton = document.querySelector(".modal_okayBtn");
   modalWindow.style.display = "flex";
   modalButton.focus();
-  modalButton.addEventListener("click", () => modalWindow.style.display = "none");
-  modalButton.addEventListener("keyup", (e) => {
-    if (e.keyCode === 13) modalWindow.style.display = "none";
-  })
+}
+function modalClose() {
+  modalWindow.style.display = "none";
+  console.log(firstOrder.style.display);
+  if(firstOrder.style.display == "flex") { 
+    firstOrder_value.innerText = "";
+    firstOrder_value.focus();
+  }
 }
 
 // EventListeners
@@ -158,7 +164,11 @@ startButton.addEventListener("click", gameStart);
 // }); // Enter Key Auto Submit
 
 firstOrder_submitBtn.addEventListener("click", firstWordSubmit);
-firstOrder_value.addEventListener("keyup", (e) => {
+firstOrder_value.addEventListener("keypress", (e) => {
   if (e.keyCode === 13) firstWordSubmit();
 }); // Enter Key Auto Submit
 firstOrder_quitBtn.addEventListener("click", closeFirstOrder);
+modalButton.addEventListener("click", modalClose);
+modalButton.addEventListener("keypress", (e) => {
+  if (e.keyCode === 13) modalClose();
+});

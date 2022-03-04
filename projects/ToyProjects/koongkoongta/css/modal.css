@@ -71,7 +71,7 @@
       font-size: 11px;
       margin: 0px 2px 0px 2px;
   }
-  #modal .modal_okayBtn:hover {
+  #modal .modal_okayBtn:focus {
     animation: upAndDown_min 0.5s infinite;
   }
   #modal .modal_okayBtn:active {
