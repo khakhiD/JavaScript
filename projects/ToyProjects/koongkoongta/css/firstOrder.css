@@ -1,3 +1,5 @@
+
+
 /* 첫 제시어 입력 모달 CSS */
 #firstOrder {
   position: fixed;
@@ -21,15 +23,15 @@
   height: auto;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0px 15px 15px #3f454d3b, 0px 0px 10px #3f454d3b;
+  box-shadow: 0px 15px 15px #3f454d3b, 0px 0px 10px var(--darkshadow);
 }
 
 #firstOrder .firstOrder_wrap p {
   text-align: left;
   width: 95%;
-  padding: 0px 0px 5px 10px;
-  margin: 5px 0px 15px 0px;
-  border-bottom: solid 1px rgb(223, 223, 223);
+  padding: 0px 0px 10px 10px;
+  margin: 5px 0px 20px 0px;
+  border-bottom: solid 1px var(--light-gray);
 }
 
 #firstOrder input {
@@ -38,7 +40,7 @@
   border-top-width: 0;
   border-bottom-width: 1;
   padding: 5px 10px 5px 10px;
-  border-bottom: solid 1px #babcbe;
+  border-bottom: solid 1px var(--input-gray);
   font-size: 18px;
   font-family: "GmarketSansMedium";
   width: 80%;
@@ -47,7 +49,7 @@
 #firstOrder input:focus {
   animation: blink 1s infinite;
   outline-width: 0px;
-  border-bottom: solid 2px #526df2;
+  border-bottom: solid 2px var(--blue);
 }
 
 #firstOrder .firstOrder_buttons {
@@ -68,8 +70,8 @@
   border-radius: 30px;
   cursor: pointer;
   word-break: keep-all;
-  color: #fff;
-  background-color: #526df2;
+  color: var(--white);
+  background-color: var(--blue);
   border: none;
 }
 
@@ -83,8 +85,8 @@
   border-radius: 30px;
   cursor: pointer;
   word-break: keep-all;
-  color: #fff;
-  background-color: rgb(255, 110, 134);
+  color: var(--white);
+  background-color: var(--redpink);
   border: none;
 }
 

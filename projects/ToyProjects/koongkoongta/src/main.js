@@ -134,8 +134,20 @@ function firstWordSubmit() {
     player1Balloon_text.innerText = firstWord;
   } else {
     console.log("단어 수가 맞지 않습니다.");
+    modalOpen();
     return false;
   }
+}
+
+function modalOpen(){
+  const modalWindow = document.querySelector("#modal");
+  const modalButton = document.querySelector(".modal_okayBtn");
+  modalWindow.style.display = "flex";
+  modalButton.focus();
+  modalButton.addEventListener("click", () => modalWindow.style.display = "none");
+  modalButton.addEventListener("keyup", (e) => {
+    if (e.keyCode === 13) modalWindow.style.display = "none";
+  })
 }
 
 // EventListeners

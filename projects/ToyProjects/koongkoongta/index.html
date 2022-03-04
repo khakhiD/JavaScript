@@ -4,7 +4,7 @@
 <head>
     <title>공포의 쿵쿵따</title>
     <meta name="description" content="쿵쿵따 게임 포트폴리오">
-    <meta http-equiv="Author" content="KhakhiD">
+    <meta http-equiv="Author" content="KhakhiD">    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/koongkoongta.css">
     <link rel="stylesheet" href="./css/animation.css">
     <link rel="stylesheet" href="./css/firstOrder.css">
+    <link rel="stylesheet" href="./css/modal.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@
             <div class="titleName">
                 <p>
                     <span>공</span><span>포</span><span>의</span>
-                    <span>쿵</span><span>쿵</span><span>따</span><span>!</span>
+                    <span class="blue">쿵</span><span class="blue">쿵</span><span class="blue">따</span><span class="blue">!</span>
                 </p>
             </div>
         </div>
@@ -124,6 +125,20 @@
             <div class="firstOrder_buttons">
                 <button class="firstOrder_submitBtn">제출</button>
                 <button class="firstOrder_quitBtn">종료</button>
+            </div>
+        </div>
+    </div>
+    <!-- information Modal -->
+    <div id="modal">
+        <div class="modal_wrap">
+            <div class="modal_header">
+                    <p class="modal_title"><span class="modal_icon">⛔</span> 경고</p>
+            </div>
+            <div class="modal_content">
+                <span class="modal_text">모달 내용이 들어갑니다.</span>
+            </div>
+            <div class="modal_footer">
+                <button class="modal_okayBtn">확인<span>(ENTER)</span></button>
             </div>
         </div>
     </div>

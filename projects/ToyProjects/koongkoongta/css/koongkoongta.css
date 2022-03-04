@@ -1,3 +1,27 @@
+:root {
+  /* color */
+  --blue: #526df2;
+  --white: #ffffff;
+  --redpink: #fd4491;
+  --pink: pink;
+  --darkgray: #3f454d;
+  --darkshadow: #3f454d3b;
+  --light-gray: #dfdfdf;
+  --input-gray: #babcbe;
+  --bgcolor: aliceblue;
+  --ballon-yellow:rgb(255, 245, 153);;
+  --ballon-redpink:pink;
+  /* size */
+  --size-button: 60px;
+  --size-thumbnail: 50px;
+  --size-border: 4px;
+  --font-size: 18px;
+  --base-space: 8px;
+
+  /* annimation */
+  --animation-duration: 300ms;
+}
+
 /* html, body */
 html,
 body {
@@ -5,14 +29,14 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  width: 100%;
+  width: 100%;  
   height: 100%;
 }
 /* adobe color 사이트에서 트렌디한 색상을 선정해보자 */
 body {
   font-family: "GmarketSansMedium";
-  background-color: aliceblue;
-  color: #3f454d;
+  background-color: var(--bgcolor);
+  color: var(--darkgray);
 }
 
 /* header */
@@ -28,62 +52,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* 사용자 입력 */
-.inputs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20px;
-  margin-bottom: 25px;
-  padding: 30px 30px 10px 30px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 15px 15px #3f454d3b;
-}
-
-.inputs hr {
-  margin-bottom: 35px;
-}
-
-.inputs_title {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  border-bottom: double 1px rgb(223, 223, 223);
-}
-.inputs_title p {
-  color: #3f454d;
-  font-family: "GMarketSansMedium";
-  font-size: 24px;
-  margin: 15px 0px 20px 0px;
-}
-
-.inputs div {
-  /* 여기에도 flex를 주는 이유는 결과 화면이 다르기 때문이다.
-    여기에 flex를 주지 않으면 inputs 부분은 column(세로, 열)으로
-    정렬이 된다. 때문에 div 부분에도 flex를 주어 있는 그대로 보이도록 한다. */
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.inputs input {
-  padding: 5px 10px 5px 10px;
-  /* 패딩의 순서는 12시, 3시, 6시 9시다. 시계 방향으로 돌아감 */
-  margin: 0 10px;
-  border: solid 1px #babcbe;
-  border-radius: 10px;
-  font-size: 20px;
-  font-family: "GmarketSansMedium";
-  color: rgb(255, 88, 116);
-  width: 50px;
-  text-align: center;
-}
-
-.inputs input::placeholder {
-  color: #babcbe;
-}
-
 /* title 부분 */
 .title {
   display: flex;
@@ -93,8 +61,7 @@ body {
 
 .title p {
   font-size: 24px;
-  color: #3f454d;
-  text-shadow: 1px 1px 10px rgb(255, 255, 255);
+  text-shadow: 1px 1px 10px var(--white);
 }
 
 .titleName {
@@ -105,7 +72,7 @@ body {
   margin-bottom: 20px;
 }
 .titleName p {
-  color: #4463fd;
+  color: var(--redpink);
   font-size: 100px;
 }
 .titleName p span {
@@ -113,6 +80,10 @@ body {
   position: relative;
   top: 20px;
   animation: bounce 0.3s ease infinite alternate;
+}
+.titleName .blue {
+  color: var(--blue);
+  font-size: 100px;
 }
 .titleName p span:nth-child(2) {
   animation-delay: 0.1s;
@@ -133,13 +104,69 @@ body {
   animation-delay: 0.6s;
 }
 
+/* 사용자 입력 */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 25px;
+  padding: 30px 30px 10px 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 15px 15px var(--darkshadow);
+}
+
+.inputs hr {
+  margin-bottom: 35px;
+}
+
+.inputs_title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: double 1px rgb(223, 223, 223);
+}
+.inputs_title p {
+  color: var(--darkgray);
+  font-family: "GMarketSansMedium";
+  font-size: 24px;
+  margin: 15px 0px 20px 0px;
+}
+
+.inputs div {
+  /* 여기에도 flex를 주는 이유는 결과 화면이 다르기 때문이다.
+    여기에 flex를 주지 않으면 inputs 부분은 column(세로, 열)으로
+    정렬이 된다. 때문에 div 부분에도 flex를 주어 있는 그대로 보이도록 한다. */
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.inputs input {
+  padding: 5px 10px 5px 10px;
+  /* 패딩의 순서는 12시, 3시, 6시 9시다. 시계 방향으로 돌아감 */
+  margin: 0 10px;
+  border: solid 1px var(--input-gray);
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "GmarketSansMedium";
+  color: var(--redpink);
+  width: 50px;
+  text-align: center;
+}
+
+.inputs input::placeholder {
+  color: var(--input-gray);
+}
+
 /* 버튼 공통 스타일 */
 button {
   font-family: "OTEnjoystoriesBA";
   font-size: 36px;
   background-color: transparent;
-  color: #526df2;
-  border: 3px solid #526df2;
+  color: var(--blue);
+  border: 3px solid var(--blue);
   border-radius: 30px;
   padding: 5px 40px;
   cursor: pointer;
@@ -168,9 +195,9 @@ button {
   padding: 8px 40px;
   word-break: keep-all;
   color: #fff;
-  background-color: #526df2;
+  background-color: var(--blue);
   border: none;
-  box-shadow: 0px 15px 15px #3f454d3b;
+  box-shadow: 0px 15px 15px var(--darkshadow);
 }
 
 .start_btn:active {
@@ -203,7 +230,7 @@ button {
   padding: 30px 30px 10px 30px;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 15px 15px #3f454d3b;
+  box-shadow: 0px 15px 15px var(--darkshadow);
 }
 
 .playTop {
@@ -212,7 +239,7 @@ button {
   justify-content: center;
   width: 100%;
   padding-bottom: 10px;
-  border-bottom: 1px solid #babcbe;
+  border-bottom: 1px solid var(--light-gray);
 }
 
 .playWindow_title {
@@ -222,7 +249,7 @@ button {
   align-items: center;
   width: 100%;
   padding-right: 30px;
-  border-right: double 1px rgb(223, 223, 223);
+  border-right: double 1px var(--light-gray);
 }
 
 .playWindow_title p {
@@ -249,7 +276,7 @@ button {
 
 .playWindow_rule p span {
   font-size: 15px;
-  color: #526df2;
+  color: var(--blue);
   font-family: "GMarketSansBold";
 }
 
@@ -275,7 +302,7 @@ button {
   margin: 15px 0px 0px 0px;
   width: 160px;
   height: 60px;
-  background: rgb(255, 245, 153);
+  background: var(--ballon-yellow);
   border-radius: 10px;
   /* animation: upAndDown_min 0.5s infinite; */
 }
@@ -298,7 +325,7 @@ button {
   border-top: 0px solid transparent;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid rgb(255, 245, 153);
+  border-bottom: 10px solid var(--ballon-yellow);
   content: "";
   position: absolute;
   top: -10px;
@@ -340,7 +367,7 @@ button {
   padding-right: 3px;
   width: 25px;
   height: 25px;
-  color: #3f454d;
+  color: var(--darkgray);
   border-bottom: solid 2px;
   border-bottom-color: #919191;
   font-size: 16px;
@@ -424,7 +451,7 @@ button {
   padding: 5px 10px 5px 10px;
   /* 패딩의 순서는 12시, 3시, 6시 9시다. 시계 방향으로 돌아감 */
   margin: 0 10px;
-  border-bottom: solid 1px #babcbe;
+  border-bottom: solid 1px var(--input-gray);
   font-size: 18px;
   font-family: "GmarketSansMedium";
   width: 250px;
@@ -434,7 +461,7 @@ button {
 .mainCommand #submit_value:focus {
   animation: blink 1s infinite;
   outline-width: 0px;
-  border-bottom: solid 2px #526df2;
+  border-bottom: solid 2px var(--blue);
 }
 
 .mainCommand .submit_btn {
@@ -447,7 +474,7 @@ button {
   cursor: pointer;
   word-break: keep-all;
   color: #fff;
-  background-color: #526df2;
+  background-color: var(--blue);
   border: none;
 }
 .mainCommand .submit_btn:hover {
@@ -524,6 +551,6 @@ button {
 }
 
 #copyright span a:hover {
-  color: #526df2;
+  color: var(--blue);
   text-decoration: underline 0.1em;
 }
