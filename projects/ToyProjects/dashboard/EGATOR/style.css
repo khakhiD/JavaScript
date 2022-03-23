@@ -249,6 +249,8 @@ main .date {
 main .date input[type="date"] {
   background: transparent;
   color: var(--color-dark);
+  font-family: poppins, sans-serif;
+  font-weight: 500;
 }
 
 main .insights {
@@ -667,7 +669,7 @@ main .recent-orders a {
     width: 100%;
     margin: 0;
     z-index: 2;
-    box-shadow: 0 1rem 1rem var(--color-light);
+    box-shadow: 0 0.8rem 1rem var(--color-light);
   }
 
   .right .top .theme-toggler {
@@ -679,6 +681,7 @@ main .recent-orders a {
   .right .profile .info {
     display: none;
   }
+
   .right .top button {
     display: inline-block;
     background: transparent;

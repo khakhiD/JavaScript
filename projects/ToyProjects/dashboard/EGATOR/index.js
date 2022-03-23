@@ -3,6 +3,21 @@ const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const themeToggler = document.querySelector(".theme-toggler");
 
+// header Top change
+const header = document.querySelector(".right .top");
+const headerHeight = header.getBoundingClientRect().height;
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > headerHeight) {
+  } else {
+  }
+});
+
+// currentDate set
+document.getElementById("currentDate").value = new Date()
+  .toISOString()
+  .substring(0, 10);
+
 // show sidebar
 menuBtn.addEventListener("click", () => {
   sideMenu.style.display = "block";
