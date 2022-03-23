@@ -345,6 +345,10 @@ main .insights .progress .number {
   align-items: center;
 }
 
+main .insights .progress p {
+  font-weight: 600;
+}
+
 main .insights small {
   margin-top: 1.3rem;
   display: block;
