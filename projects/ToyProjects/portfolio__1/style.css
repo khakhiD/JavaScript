@@ -1,10 +1,23 @@
+/* FONT FACE */
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+}
+
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+  unicode-range: U+AC0020-D7A3;
+}
+
 /* ROOT VARIABLES */
 :root {
   --color-white: #fff;
   --color-light: #f4f4f4;
   --color-dark: #525252;
   --color-black: #141415;
-  --color-primary: #f24e1e;
+  --color-primary: #2469ff;
+  /* --color-primary: #f24e1e; */
   --color-primary-light: hsl(14, 89%, 53%, 12%);
   --color-success: #29f5a6;
   --color-warning: #ffce31;
