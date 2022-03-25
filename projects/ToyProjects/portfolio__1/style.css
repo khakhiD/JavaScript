@@ -104,6 +104,7 @@ img {
 .btn {
   padding: 1.4rem 3.4rem;
   font-size: 1.1rem;
+  font-weight: 600;
   color: var(--color-black);
   background-color: var(--color-white);
   display: inline-block;
