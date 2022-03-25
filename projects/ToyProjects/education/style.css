@@ -1,3 +1,20 @@
+/* FONT FACE */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css");
+@font-face {
+  font-family: "Pretendard";
+  src: url("/openconcert/fonts/NotoSansKR-Regular-Hestia.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("/openconcert/fonts/dancingscript-webfont.woff") format("woff");
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A;
+}
+
+/* STYLESHEET */
 * {
   margin: 0;
   padding: 0;
@@ -29,10 +46,11 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Pretendard";
   line-height: 1.7;
   color: var(--color-white);
   background-color: var(--color-bg);
+  background-image: url("./images/bg-texture.png");
   user-select: none;
 }
 
@@ -113,6 +131,14 @@ nav {
   position: fixed;
   top: 0;
   z-index: 11;
+}
+
+nav .title:hover {
+  animation: up_title 300ms ease 1 forwards;
+}
+
+nav .title:hover .title__draw {
+  text-decoration: underline;
 }
 
 /* change navbar styles on scroll using js */
@@ -322,9 +348,13 @@ header {
   padding-top: 2rem;
 }
 
+.testimonials__container h5 {
+  font-size: 1rem;
+}
+
 .avatar {
-  width: 6rem;
-  height: 6rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 1rem;
@@ -356,7 +386,7 @@ header {
   width: 3rem;
   height: 3rem;
   position: absolute;
-  left: 42%;
+  left: 50%;
   top: -1.5rem;
   transform: rotate(45deg);
 }
