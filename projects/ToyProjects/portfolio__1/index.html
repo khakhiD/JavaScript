@@ -6,7 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Personal Portfolio Website Using HTML, CSS and JS - KHAKHID</title>
-
+    <!-- FONTS & ICONS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FONTAWESOME CDN -->
+    <script src="https://kit.fontawesome.com/1e40242dee.js" crossorigin="anonymous"></script>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -15,18 +22,49 @@
     <nav>
         <div class="container">
             <a href="#">
-                <h3>Omega</h3>
+                <h3>~SOLIDRAW-</h3>
             </a>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#services">Service</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Let's Talk</a></li>
             </ul>
+            <button><span class="material-icons-sharp">menu</span></button>
+            <button><span class="material-icons-sharp">close</span></button>
         </div>
     </nav>
+    <!-- END OF NAVBAR -->
+    <section class="landing">
+        <div class="container">
+            <div class="socials">
+                <a href="https://github.com/khakhid" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://github.com/khakhid" target="_blank"><i class="fa fa-dribbble"></i></a>
+                <a href="https://github.com/khakhid" target="_blank"><i class="fa fa-github"></i></a>
+            </div>
+            <div class="info">
+                <h1>Handraw to Solidraw</h1>
+                <h3>Welcome, Converters</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam suscipit neque consequuntur, ratione
+                    distinctio officiis veritatis commodi quas ex ad recusandae autem aut non quos sed tenetur qui natus
+                    nisi.</p>
+                <a href="#contact" class="btn btn-primary">Let's Talk</a>
+            </div>
+            <div class="profile-area">
+                <div class="outer-circle">
+                    <span class="material-icons-sharp">design_services</span>
+                    <span class="material-icons-sharp">dns</span>
+                    <span class="material-icons-sharp">code</span>
+                    <span class="material-icons-sharp">integration_instructions</span>
+                </div>
+                <div class="inner-circle">
+                    <img src="./images/profile-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
