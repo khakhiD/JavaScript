@@ -23,6 +23,7 @@
   --color-warning: #ffce31;
 
   --transition: all 300ms ease;
+  --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
 * {
@@ -242,4 +243,47 @@ section.landing .profile-area .outer-circle {
 
 section.landing .profile-area .inner-circle {
   display: none;
+}
+
+/* MAILBOX */
+.mailbox {
+  /* display: none; */
+  padding: 0.8rem;
+  width: 26rem;
+  border-radius: 1rem;
+  background-color: var(--color-white);
+  border: solid 1px var(--color-dark);
+}
+.mailbox h1 {
+  font-size: 2rem;
+  margin: 1rem 0 2rem;
+}
+
+.mailbox form {
+  display: flex;
+  flex-direction: column;
+  width: 24rem;
+  gap: 1rem;
+}
+
+.mailbox input,
+.mailbox select,
+.mailbox textarea {
+  padding: 0.8rem;
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--color-dark);
+}
+
+.mailbox textarea {
+  resize: none;
+  height: 8rem;
+}
+
+.mailbox button {
+  width: 100%;
+  padding: 1.4rem;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }

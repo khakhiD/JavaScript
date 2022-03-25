@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
         rel="stylesheet">
     <!-- FONTAWESOME CDN -->
     <script src="https://kit.fontawesome.com/1e40242dee.js" crossorigin="anonymous"></script>
@@ -64,6 +65,22 @@
                 <div class="inner-circle">
                     <img src="./images/profile-1.jpg" alt="">
                 </div>
+            </div>
+            <div class="mailbox">
+                <h1>Contact Form</h1>
+                <form action="https://formspree.io/f/xgedledl" method="POST">
+                    <input type="text" name="Name" placeholder="이름" required>
+                    <input type="email" name="Email" placeholder="이메일 주소" required>
+                    <select name="Nation">
+                        <option>South Korea</option>
+                        <option>Europe</option>
+                        <option>South America</option>
+                        <option>North America</option>
+                        <option>Asia</option>
+                    </select>
+                    <textarea name="Message" placeholder="내용" required></textarea>
+                    <button type="submit">보내기</button>
+                </form>
             </div>
         </div>
     </section>
