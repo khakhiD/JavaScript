@@ -1,6 +1,19 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css");
+@font-face {
+  font-family: "Pretendard";
+  src: url("/openconcert/fonts/NotoSansKR-Regular-Hestia.woff") format("woff");
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("/openconcert/fonts/dancingscript-webfont.woff") format("woff");
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A;
+}
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
@@ -225,6 +238,13 @@ button {
 }
 
 /* Active link */
+.active-link{
+  background: linear-gradient(101deg,
+  hsl(228, 66%, 53%),
+  hsl(228,66%,47%));
+  color: #fff;
+  box-shadow: 0 4px 8px hsla(228, 66%, 45%, .25);
+}
 
 
 /*=============== HOME ===============*/
@@ -276,6 +296,8 @@ button {
   background-color: var(--body-color);
   color: var(--text-color);
   margin-right: .5rem;
+  /* add compo by myself */
+  margin-left: .5rem;
 }
 
 .home__search-input::placeholder{
@@ -641,14 +663,150 @@ button {
 .contact__card-box:hover{
   box-shadow: 0 8px 24px hsla(228, 66%, 45%, .1);
 }
-/*=============== SUBSCRIBE ===============*/
 
+/*=============== SUBSCRIBE ===============*/
+.subscribe{
+  padding: 2.5rem 0;
+}
+
+.subscribe__container{
+  background-color: var(--first-color);
+  padding: 3rem 2rem;
+  border-radius: 1.25rem;
+  border: 6px solid var(--first-color-light);
+  text-align: center;
+}
+
+.subscribe__title{
+  font-size: var(--h2-font-size);
+  color:#fff;
+  margin-bottom: 1rem;
+}
+
+.subscribe__description{
+  color: hsl(228, 90%, 92%);
+  font-size: var(--small-font-size);
+  margin-bottom: 2rem;
+}
+
+.subscribe__button{
+  border: 2px solid #fff;
+  background: var(--first-color-light);
+  font-size: var(--small-font-size);
+}
+
+.subscribe__button:hover{
+  background-color: var(--first-color);
+}
 
 /*=============== FOOTER ===============*/
+.footer__container{
+  row-gap: 2.5rem;
+}
 
+.foooter_logo{
+  color:var(--first-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  background: .75rem;
+}
+
+.footer__logo i{
+  font-size: 1.25rem;
+}
+
+.footer__description,
+.footer__link{
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
+
+.footer__content,
+.footer__links{
+  display: grid;
+}
+
+.footer__content{
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 4rem;
+}
+
+.footer__title{
+  font-size: var(--h3-font-size);
+  background: 1rem;
+}
+
+.footer__links{
+  row-gap: .5rem;
+}
+
+.footer__link{
+  color: var(--text-color);
+  transition: .3s;
+}
+
+.footer__link:hover{
+  color:var(--title-color);
+}
+
+.footer___social{
+  display: flex;
+  column-gap: 1rem;
+}
+
+.footer__social-link{
+  font-size: 1.25rem;
+  color:var(--text-color);
+  transition: .3s;
+}
+
+.footer__social-link:hover{
+  color:var(--title-color);
+}
+
+.footer__info,
+.footer__privacy{
+  display: flex;
+}
+
+.footer__info{
+  padding-bottom: 6rem;
+  margin-top: 5.5rem;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 1.5rem;
+}
+
+.footer__copy,
+.footer__privacy a{
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+}
+
+.footer__privacy{
+  justify-content: center;
+  column-gap: 1.25rem;
+}
 
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(228, 8%, 76%);
+}
 
+::-webkit-scrollbar-thumb{
+  background-color: hsl(228, 8%, 64%);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(228, 8%, 54%);
+}
 
 /*=============== SCROLL UP ===============*/
 
