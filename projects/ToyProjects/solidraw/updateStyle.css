@@ -1,0 +1,12 @@
+/* 22.04.28 THR */
+/* ========================================= */
+input#chooseFile {
+    visibility: hidden;
+}
+
+.convert__left {
+  width: 35rem;
+  height: 20rem;
+  border-radius: 15%;
+  background-color: #fff;
+}
