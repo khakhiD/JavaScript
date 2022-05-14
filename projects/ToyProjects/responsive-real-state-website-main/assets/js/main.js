@@ -1,3 +1,22 @@
+/*=============== SUBMIT BUTTON ==========================*/ 
+function loadFile(input) {
+  let file = input.files[0];
+  let name = document.getElementById("fileName");
+  name.textContent = file.name;
+
+  let newImage = document.createElement("img");
+  newImage.setAttribute("class", "img");
+  newImage.src = URL.createObjectURL(file);
+  newImage.style.width = "300px";
+  newImage.style.height = "auto";
+  newImage.style.visibility = "hidden"; //버튼을 누르기 전까지는 이미지 숨기기
+  newImage.style.objectFit = "contain";
+
+  let container = document.getElementById("image-show");
+  container.appendChild(newImage);
+}
+
+
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader(){
     const header = document.getElementById('header')
@@ -6,12 +25,12 @@ function scrollHeader(){
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SWIPER POPULAR ===============*/
-var swiperPopular = new Swiper(".popular__container", {
+let swiperPopular = new Swiper(".popular__container", {
     spaceBetween: 32,
     grabCursor: true,
-    centeredSlides: true,
+    centeredSlides: false,
     slidesPerView: 'auto',
-    loop: true,
+    loop: false,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -114,6 +133,3 @@ sr.reveal(`.home__images`, {delay: 800, origin: 'bottom'})
 sr.reveal(`.logos__img`, {interval: 100})
 sr.reveal(`.value__images, .contact__content`, {origin: 'left'})
 sr.reveal(`.value__content, .contact__images`, {origin: 'right'})
-
-
-

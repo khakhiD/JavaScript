@@ -15,7 +15,9 @@
 
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="assets/css/styles.css">
-
+        <link rel="stylesheet" href="assets/css/screen.css">
+        <link rel="stylesheet" href="assets/css/darktheme.css">
+        <link rel="stylesheet" href="assets/css/upload.css">
         <title>SOLIDRAW - Applied NEW Design Templates</title>
     </head>
     <body>
@@ -31,12 +33,12 @@
                         <li class="nav__item">
                             <a href="#home" class="nav__link active-link">
                                 <i class="bx bx-home-alt-2"></i>
-                                <span>홈으로</span>
+                                <span>홈</span>
                             </a>
                         </li>
                         <li class="nav__item">
                             <a href="#popular" class="nav__link" >
-                                <i class="bx bx-building-house"></i>
+                                <i class='bx bx-notepad' ></i>
                                 <span>가이드</span>
                             </a>
                         </li>
@@ -49,7 +51,7 @@
                         <li class="nav__item">
                             <a href="#contact" class="nav__link">
                                 <i class="bx bx-phone"></i>
-                                <span>피드백</span>
+                                <span>컨택트</span>
                             </a>
                         </li>
                     </ul>
@@ -69,18 +71,20 @@
                 <div class="home__container container grid">
                     <div class="home__data">
                         <h1 class="home__title">
-                            Convert <br>your sketch<br>for free
+                            Rough to<br>Solid for<br>your sketch
                         </h1>
                         <p class="home__description">
-                            러프한 여러분의 손스케치를 솔리드한 도면으로 변환해보세요.
+                            여러분의 러프 스케치를 솔리드한 도면으로 변환하세요.
                         </p>
-                        <form action="" class="home__search">
+                        <form method="post" enctype="multipart/form-data" action="upload" class="home__search">
                             <i class="bx bxs-file-image"></i>
                             <!-- bx bxs-file-image -->
-                            <input type="search" placeholder="Convert by your sketch images..." class="home__search-input">
-                            <button class="button">파일선택</button>
+                            <span class="upload__name" id="fileName">Convert into solid...</span>
+                            <!-- <input type="search" placeholder="Convert by your sketch images..." class="home__search-input"> -->
+                            <label class="button" for="chooseFile" id="upload__button">파일선택</label>
+                            <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
                         </form>
-
+                        <div class="image-show" id="image-show"></div>
                         <div class="home__value">
                             <div>
                                 <h1 class="home__value-number">
@@ -103,7 +107,7 @@
                                     10<span>+</span>
                                 </h1>
                                 <span class="home__value-description">
-                                    캡스톤디자인 <br> 하기싫다
+                                    캡스톤디자인 <br> 프로젝트
                                 </span>
                             </div>
                         </div>
@@ -111,7 +115,7 @@
                     <div class="home__images">
                         <div class="home__orbe">
                             <div class="home__img">
-                                <img src="./assets/bgimg/bg_img0.jpg" alt="">
+                                <img src="./assets/img/art.svg" alt="">
                             </div>
                         </div>
                     </div>
@@ -122,16 +126,16 @@
             <section class="logos section">
                 <div class="logos__container container grid">
                     <div class="logos__img">
-                        <img src="assets/img/logo1.png" alt="">
+                        <img src="assets/img/logo_1.png" alt="">
                     </div>
                     <div class="logos__img">
-                        <img src="assets/img/logo2.png" alt="">
+                        <img src="assets/img/logo_2.png" alt="">
                     </div>
                     <div class="logos__img">
-                        <img src="assets/img/logo3.png" alt="">
+                        <img src="assets/img/logo_3.png" alt="">
                     </div>
                     <div class="logos__img">
-                        <img src="assets/img/logo4.png" alt="">
+                        <img src="assets/img/logo_4.png" alt="">
                     </div>
                 </div>
             </section>
@@ -140,7 +144,7 @@
             <section class="popular section" id="popular">
                 <div class="container">
                     <span class="section__subtitle">
-                        활용 가이드
+                        가이드
                     </span>
                     <h2 class="section__title">
                         Guide<span>.</span>
@@ -153,14 +157,13 @@
                             <img src="assets/img/popular1.jpg" alt="" class="popular__img">
                             <div class="popular__data">
                                 <h2 class="popular__price">
-                                    <span>$</span>66,356
+                                    Step <span>1</span>
                                 </h2>
                                 <h3 class="popular__title">
-                                    Garden City Assat
+                                    이미지 업로드
                                 </h3>
                                 <p class="popular__description">
-                                    Street The Garden City Of Miraflores,
-                                    Lima - Peru Av. Sol #9876
+                                    변환할 손 스케치 도면 파일을 업로드합니다.
                                 </p>
                             </div>
                         </article>
@@ -168,14 +171,13 @@
                             <img src="assets/img/popular2.jpg" alt="" class="popular__img">
                             <div class="popular__data">
                                 <h2 class="popular__price">
-                                    <span>$</span>35,159
+                                    Step <span>2</span>
                                 </h2>
                                 <h3 class="popular__title">
-                                    Gables Luxurious House
+                                    옵션 및 치수 입력
                                 </h3>
                                 <p class="popular__description">
-                                    Street The Garden City Of Miraflores,
-                                    Lima - Peru Av. Sol #9876
+                                    변환 옵션과 치수를 기입해줍니다.
                                 </p>
                             </div>
                         </article>
@@ -183,14 +185,13 @@
                             <img src="assets/img/popular3.jpg" alt="" class="popular__img">
                             <div class="popular__data">
                                 <h2 class="popular__price">
-                                    <span>$</span>75,043
+                                    Step <span>3</span>
                                 </h2>
                                 <h3 class="popular__title">
-                                    Garden Orchard City
+                                    변환
                                 </h3>
                                 <p class="popular__description">
-                                    Street The Garden City Of Miraflores,
-                                    Lima - Peru Av. Sol #9876
+                                    변환하기 버튼을 눌러 도면을 변환합니다.
                                 </p>
                             </div>
                         </article>
@@ -198,14 +199,13 @@
                             <img src="assets/img/popular4.jpg" alt="" class="popular__img">
                             <div class="popular__data">
                                 <h2 class="popular__price">
-                                    <span>$</span>62,024
+                                    Step <span>4</span>
                                 </h2>
                                 <h3 class="popular__title">
-                                    Luxurious City Garden
+                                    다운로드
                                 </h3>
                                 <p class="popular__description">
-                                    Street The Garden City Of Miraflores,
-                                    Lima - Peru Av. Sol #9876
+                                    변환된 도면을 확인하고, 다운로드할 수 있습니다.
                                 </p>
                             </div>
                         </article>
@@ -213,14 +213,13 @@
                             <img src="assets/img/popular5.jpg" alt="" class="popular__img">
                             <div class="popular__data">
                                 <h2 class="popular__price">
-                                    <span>$</span>47,043
+                                    Step <span>5</span>
                                 </h2>
                                 <h3 class="popular__title">
-                                    Aliva Private Garden
+                                    평가하기
                                 </h3>
                                 <p class="popular__description">
-                                    Street The Garden City Of Miraflores,
-                                    Lima - Peru Av. Sol #9876
+                                    완성 도면 결과에 평점을 매겨주세요!
                                 </p>
                             </div>
                         </article>
@@ -240,7 +239,7 @@
                     <div class="value__images">
                         <div class="value__orbe"></div>
                         <div class="value__img">
-                            <img src="./assets/bgimg/bg_img0.jpg" alt="">
+                            <img src="./assets/img/value.svg" alt="">
                         </div>
                     </div>
                     <div class="value__content">
@@ -248,16 +247,16 @@
                             <span class="section__subtitle">가치</span>
                             <h2 class="section__title">Value<span>.</span></h2>
                             <p class="value__description">
-                                우리가 지향하는 솔리드로우의 가치를 소개합니다.
+                                
                             </p>
                         </div>
 
                         <div class="value__accordion">
                             <div class="value__accordion-item">
                                 <header class="value__accordion-header">
-                                    <i class="bx bxs-shield-x value__accordion-icon"></i>
+                                    <i class="bx bxs-coin-stack value__accordion-icon"></i>
                                     <h3 class="value__accordion-title">
-                                        Best interest rates on the market
+                                        완전한 무료 서비스를 지향
                                     </h3>
                                     <div class="value__accordion-arrow">
                                         <i class="bx bxs-down-arrow"></i>
@@ -265,17 +264,16 @@
                                 </header>
                                 <div class="value__accordion-content">
                                     <p class="value__accordion-description">
-                                        Price we provides is the best for you, 
-                                        we guarantee no price changes on your property due 
-                                        to various unexpected costs that may come.
+                                        솔리드로우는 완전 무료 서비스를 지향합니다.
+                                        아무런 걱정 없이 마음껏 사용해주세요.
                                     </p>
                                 </div>
                             </div>
                             <div class="value__accordion-item">
                                 <header class="value__accordion-header">
-                                    <i class="bx bxs-x-square value__accordion-icon"></i>
+                                    <i class="bx bxs-brain value__accordion-icon"></i>
                                     <h3 class="value__accordion-title">
-                                        Prevent unstable prices
+                                        딥러닝 학습으로 더 정교한 결과
                                     </h3>
                                     <div class="value__accordion-arrow">
                                         <i class="bx bxs-down-arrow"></i>
@@ -283,9 +281,8 @@
                                 </header>
                                 <div class="value__accordion-content">
                                     <p class="value__accordion-description">
-                                        Price we provides is the best for you, 
-                                        we guarantee no price changes on your property due 
-                                        to various unexpected costs that may come.
+                                        변환 도면 학습으로 사용자들의 변환 횟수가
+                                        늘어남에따라 더 나은 결과를 보여(줬으면 좋겠다.)
                                     </p>
                                 </div>
                             </div>
@@ -293,7 +290,7 @@
                                 <header class="value__accordion-header">
                                     <i class="bx bxs-bar-chart-square value__accordion-icon"></i>
                                     <h3 class="value__accordion-title">
-                                        Best prices on the market
+                                        즉각적인 피드백
                                     </h3>
                                     <div class="value__accordion-arrow">
                                         <i class="bx bxs-down-arrow"></i>
@@ -301,17 +298,15 @@
                                 </header>
                                 <div class="value__accordion-content">
                                     <p class="value__accordion-description">
-                                        Price we provides is the best for you, 
-                                        we guarantee no price changes on your property due 
-                                        to various unexpected costs that may come.
+                                        여러분의 소중한 피드백을 양분삼아 성장하는 솔리드로우를 기대해주세요.
                                     </p>
                                 </div>
                             </div>
                             <div class="value__accordion-item">
                                 <header class="value__accordion-header">
-                                    <i class="bx bxs-check-square value__accordion-icon"></i>
+                                    <i class="bx bxs-check-shield value__accordion-icon"></i>
                                     <h3 class="value__accordion-title">
-                                        Security of your data
+                                        원본 데이터 보호
                                     </h3>
                                     <div class="value__accordion-arrow">
                                         <i class="bx bxs-down-arrow"></i>
@@ -319,9 +314,8 @@
                                 </header>
                                 <div class="value__accordion-content">
                                     <p class="value__accordion-description">
-                                        Price we provides is the best for you, 
-                                        we guarantee no price changes on your property due 
-                                        to various unexpected costs that may come.
+                                        솔리드로우는 업로드된 데이터를 보관하지 않습니다.
+                                        변환 작업 이후, 원본은 서버에서 완전히 삭제됩니다.
                                     </p>
                                 </div>
                             </div>
@@ -337,21 +331,34 @@
                         <div class="contact__orbe"></div>
 
                         <div class="contact__img">
-                            <img src="./assets/bgimg/bg_img0.jpg" alt="">
+                            <img src="./assets/img/contact.svg" alt="">
                         </div>
                     </div>
                 
                     <div class="contact__content">
                         <div class="contact__data">
-                            <span class="section__subtitle">피드백</span>
+                            <span class="section__subtitle">컨택트</span>
                             <h2 class="section__title">
-                                Feedback<span>.</span>
+                                Contact<span>.</span>
                             </h2>
                             <p class="contact__description">
-                                언제든지 당신의 피드백을 기다리고 있습니다.
+                                사용자의 피드백은 언제나 환영합니다.
                             </p>
                         </div>
+
                         <div class="contact__card">
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class="bx bxs-envelope"></i>
+                                    <div>
+                                        <h3 class="contact__card-title">Message</h3>
+                                        <p class="contact__card-description">
+                                            다이렉트 메세지
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="button contact__card-button">보내기</button>
+                            </div>
                             <div class="contact__card-box">
                                 <div class="contact__card-info">
                                     <i class="bx bxl-discord-alt"></i>
@@ -387,18 +394,6 @@
                                 <button class="button contact__card-button">확인하기</button>
                             </div>
 
-                            <div class="contact__card-box">
-                                <div class="contact__card-info">
-                                    <i class="bx bxs-envelope"></i>
-                                    <div>
-                                        <h3 class="contact__card-title">Message</h3>
-                                        <p class="contact__card-description">
-                                            022.321.165.19
-                                        </p>
-                                    </div>
-                                </div>
-                                <button class="button contact__card-button">Message Now</button>
-                            </div>
                         </div>
                    </div>
               </div>
@@ -445,7 +440,7 @@
                                 <a href="#" class="footer__link">Features</a>
                             </li>
                             <li>
-                                <a href="#" class="footer__link">News & Blog</a>
+                                <a href="#" class="footer__link">Blog</a>
                             </li>
                         </ul>
                     </div>
@@ -457,7 +452,7 @@
                                 <a href="#" class="footer__link">Github</a>
                             </li>
                             <li>
-                                <a href="#" class="footer__link"></a>
+                                <a href="javascript:alert('준비중입니다.');" onfocus="this.blur()" class="footer__link">API</a>
                             </li>
                             <li>
                                 <a href="#" class="footer__link"></a>
@@ -472,9 +467,6 @@
                                 <a href="" class="footer__link">FAQs</a>
                             </li>
                             <li>
-                                <a href="" class="footer__link">Support Center</a>
-                            </li>
-                            <li>
                                 <a href="Contact Us" class="footer__link"></a>
                             </li>
                         </ul>
@@ -484,13 +476,13 @@
                         <h3 class="footer__title">팔로우</h3>
                         <ul class="footer__social">
                             <a href="#" target="_blank" class="footer__social-link">
-                                <i class="bx bxl-facebook-circle"></i>
+                                <i class="bx bxl-discord-alt"></i>
                             </a>
                             <a href="#" target="_blank" class="footer__social-link">
                                 <i class="bx bxl-instagram-alt"></i>
                             </a>
                             <a href="#" target="_blank" class="footer__social-link">
-                                <i class="bx bxl-pinterest"></i>
+                                <i class="bx bxl-github"></i>
                             </a>
                         </ul>
                     </div>
