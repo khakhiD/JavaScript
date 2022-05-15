@@ -888,3 +888,8 @@ button {
 .show-scroll{
   bottom: 8rem;
 }
+
+.count_num{
+  font-size: 30px;
+  font-weight: bold;
+}
