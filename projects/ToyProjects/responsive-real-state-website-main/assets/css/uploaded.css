@@ -1,0 +1,14 @@
+.uploaded {
+    background-color: var(--body-color);
+    padding: .35rem .35rem .35rem .75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .75rem;
+    border: 3px solid var(--text-color-light);
+    margin-bottom: 2rem;
+}
+
+.uploaded convert_btn {
+    
+}
