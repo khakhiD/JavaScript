@@ -1,5 +1,7 @@
 "use strict";
 
+const { resolve } = require("path");
+
 // Promise is a JavaScript object for asynchronous operation.
 // 1) State
 // 2) Producer and Consumer
@@ -9,7 +11,7 @@
 
 //--------------------------------------------------------------------------
 // 1. Producer
-// when newe Promise is created, the executor runs automatically.
+// when new Promise is created, the executor runs automatically.
 const promise = new Promise((resolve, reject) => {
   // doing some heavy work (network, read files)
   // 무거운 작업 (네트워크 통신 등)은 비동기적으로 처리하는 것이 좋음
@@ -84,3 +86,25 @@ getHen() //
   .then((meal) => console.log(meal))
   .catch(console.log);
 // catch를 사용하면서 error가 발생한 부분을 가장 밑으로 내려 출력해준다.
+
+
+const fakeRequest = (url) => {
+  return new Promise ((res, rej) => {
+    const rand = Math.random();
+    setTimeout(() => {
+      if (rand < 0.7) {
+        resolve('YOUR FAKE DATA HERE');
+      }
+      reject('REQUEST ERROR!');
+    }, 1000)
+  })
+}
+
+fakeRequest('/dogs/1')
+  .then((data) => {
+    console.log("DONE WITH REQUEST!");
+    console.log('data is:', data)
+  })
+  .catch((err) => {
+    console.log("oh no!", err);
+  })
