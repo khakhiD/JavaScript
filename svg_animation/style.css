@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,700");
+        * {
+            box-sizing: border-box;
+        }
+        body,
+        html {
+            font-family: "Montserrat", sans-serif;
+            min-height: 100vh;
+            margin: 0;
+        }
+        body {
+            background: #f4f4f4;
+            background-size: cover;
+        }
+        #home-container {
+            display: grid;
+            grid-template-columns: 10px 1fr 10px; /* for left and right sections */
+            grid-template-rows: 10px 0.8fr 1.2fr 10px;
+            grid-gap: 20px;
+            height: 100vh;
+        }
+        
+        #inner {
+            grid-row: 2;
+            grid-column: 2;
+            align-self: center;
+            justify-self: center;
+        }
+        
+        #illustration {
+            grid-row: 3;
+            grid-column: 2;
+            align-self: center;
+            justify-self: center;
+            width: 100%;
+            padding: 10px;
+        }
+        
+        @media (min-width: 768px) {
+            #home-container {
+                grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+                grid-template-rows: 1fr;
+            }
+            #inner {
+                grid-column: 2;
+                grid-row: 1;
+            }
+        
+            #illustration {
+                grid-column: 3;
+                grid-row: 1;
+            }
+        }
+        
+        h1 {
+            text-transform: uppercase;
+            color: #535353;
+            margin-bottom: 0.2em;
+        }
+        
+        p.subtitle {
+            font-size: 1.4em;
+            color: #858585;
+            margin: 0.3;
+        }
+        
+        .cta {
+            background-color: #09bbe9;
+            padding: 12px;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 0 0 0 rgba(9, 187, 233, .2);
+        }
+        
+        .cta:hover,
+        .cta:focus {
+          -webkit-animation: pulse 1.25s infinite cubic-bezier(0.50, 0, 0, 1);
+          -moz-animation: pulse 1.25s infinite cubic-bezier(0.50, 0, 0, 1);
+          -ms-animation: pulse 1.25s infinite cubic-bezier(0.50, 0, 0, 1);
+          animation: pulse 1.25s infinite cubic-bezier(0.50, 0, 0, 1);
+        }
+        
+        @-webkit-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(9, 187, 233, 0);}}
+        @-moz-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(9, 187, 233, 0);}}
+        @-ms-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(9, 187, 233, 0);}}
+        @keyframes pulse {to {box-shadow: 0 0 0 20px rgba(9, 187, 233, 0);}}
+        
+        
+        #left{
+            animation: left 1s linear infinite;
+            transform-origin: center;
+            transform-box: fill-box;
+        }
+        
+        @keyframes left{
+            from{
+                transform: translateY(0px);
+             }
+             to{
+                transform: translateY(10px);
+             }
+        }
+        
+        #right{
+            animation: right 2s linear infinite;
+            transform-origin: center;
+            transform-box: fill-box;
+        }
+        
+        @keyframes right{
+            0%  {transform: rotateZ(0deg);}
+            25%  {transform: rotateZ(3deg);}
+            50%  {transform: rotateZ(-3deg);}
+            75%  {transform: rotateZ(3deg);}
+            100% {transform: rotateZ(0deg);}
+        }
+        
+        #twi, #fb, #insta{
+           animation: media 5s linear infinite;
+           transform-origin: center;
+           transform-box: fill-box;
+        }
+        
+        @keyframes media{
+            0%   {transform: rotateZ(0deg);}
+            25%  {transform: rotateZ(30deg);}
+            50%  {transform: rotateZ(-30deg);}
+            75%  {transform: rotateZ(30deg);}
+            100% {transform: rotateZ(0deg);}
+        }
+        
+        #arrow{
+            animation: arrow 1s ease infinite;
+            transform-origin: center;
+            transform-box: fill-box;
+        }
+        
+        @keyframes arrow{
+            from{
+                transform: translateX(0px);
+             }
+             to{
+                transform: translateX(10px);
+             }
+        }
